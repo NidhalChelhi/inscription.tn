@@ -22,7 +22,8 @@ const config: Config = {
         grey: "#747A88",
       },
       backgroundImage: {
-        "auth-img": "url('/assets/img.jpg')",
+        "login-img": "url('/assets/login-bg.jpg')",
+        "register-img": "url('/assets/register-bg.jpg')",
       },
     },
   },

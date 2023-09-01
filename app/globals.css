@@ -1,11 +1,10 @@
-@import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
-
+@import url("https://fonts.googleapis.com/css2?family=Readex+Pro:wght@200;300;400;500;600;700&display=swap");
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-* > * {
-  font-family: "Poppins", sans-serif;
+* {
+  font-family: "Readex Pro", sans-serif;
 }
 
 a {

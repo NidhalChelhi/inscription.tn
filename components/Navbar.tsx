@@ -3,9 +3,10 @@
 import { navVariants } from "@/utils/motions";
 import { motion } from "framer-motion";
 import { useState } from "react";
-import { BsFacebook, BsTwitter } from "react-icons/bs";
+import { PiFacebookLogoBold, PiLinkedinLogoBold } from "react-icons/pi";
 import { GiTunisia, GiFrance } from "react-icons/gi";
 import { useTranslation } from "react-i18next";
+import Link from "next/link";
 
 const Navbar = () => {
     const { t, i18n } = useTranslation();
@@ -23,40 +24,48 @@ const Navbar = () => {
             className="w-full sm:px-24 px-12 py-8"
         >
             <div className="w-full flex justify-between gap-4 sm:gap-8">
-                <div className="hidden sm:flex flex-row items-center justify-between">
-                    <BsFacebook size={24} className="sm:mr-5 mr-3" />
-                    <BsTwitter size={24} />
+                <div className="hidden sm:flex flex-row items-center justify-between gap-5">
+                    <Link
+                        href="https://www.facebook.com/profile.php?id=100064605075098"
+                        target="_blank"
+                    >
+                        <img src="/assets/facebook.png" alt="facebook" width={24} />
+                    </Link>
+                    <Link href="https://www.linkedin.com/company/mesrst/" target="_blank">
+                        <img src="/assets/linkedin.png" alt="linkedin" width={24} />
+                    </Link>
                 </div>
 
-                <h2 className="font-extrabold text-[24px] leading-[30.24px] text-gray-800">
+                <Link href='/' className="font-extrabold text-[24px] leading-[30.24px] text-gray-800">
                     Inscription.tn
-                </h2>
+                </Link>
 
                 <div className="flex flex-row items-center justify-between">
                     {toggle ? (
                         <div
-                            className="flex flex-row"
+                            className="flex flex-row gap-2 cursor-pointer"
                             onClick={() => {
                                 setToggle(!toggle);
                                 toggleLanguage("fr");
                             }}
                         >
-                            <GiFrance size={24} className="mx-1 object-contain" />
-                            <h2 className="font-bold text-[18px] leading-[30.24px] text-black">
-                                FR
+                            <img src="/assets/tunisia.png" alt="tunisia" width={30} height={30} className="object-cover" />
+
+                            <h2 className="font-bold text-[18px] leading-[30.24px] text-gray-800 hover:text-red-600 select-none">
+                                AR
                             </h2>
                         </div>
                     ) : (
                         <div
-                            className="flex flex-row"
+                            className="flex flex-row gap-2 cursor-pointer"
                             onClick={() => {
                                 setToggle(!toggle);
                                 toggleLanguage("ar");
                             }}
                         >
-                            <GiTunisia size={24} className="mx-1 object-contain" />
-                            <h2 className="font-bold text-[18px] leading-[30.24px] text-black">
-                                AR
+                            <img src="/assets/france.png" alt="france" width={30} height={30} className="object-cover" />
+                            <h2 className="font-bold text-[18px] leading-[30.24px] text-gray-800 hover:text-blue-700 select-none">
+                                FR
                             </h2>
                         </div>
                     )}

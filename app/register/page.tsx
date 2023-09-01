@@ -41,11 +41,10 @@ export default function Page() {
             className="m-auto bg-slate-50 rounded-3xl w-5/6 h-auto grid lg:grid-cols-2 drop-shadow-2xl"
         >
             <div className="w-full rounded-l-3xl relative overflow-hidden">
-                <div className="bg-auth-img bg-cover absolute inset-0 bg-no-repeat z-10 w-full h-full bg-center"></div>
+                <div className="bg-register-img bg-cover absolute inset-0 bg-no-repeat z-10 w-full h-full bg-center"></div>
             </div>
             <div className="right flex flex-col justify-center">
                 <div className="text-center py-10">
-                    {" "}
                     <section
                         className="w-3/4 mx-auto flex flex-col gap-10"
                         style={
@@ -119,24 +118,24 @@ export default function Page() {
                             <span className="text-blue-700 text-start flex justify-start items-center gap-2">
                                 <label htmlFor="checkbox-1 cursor-pointer">
                                     {t("I accept")}{" "}
-                                    <a
-                                        href="https://www2.inscription.tn/ORegMx/mentionslegales.jsp"
+                                    <Link
+                                        href="https://www2.inscription.tn/ORegMx/mentionslegales.jsp" target="_blank"
                                         className="underline"
                                     >
                                         {t("The privacy terms")}
-                                    </a>
+                                    </Link>
                                 </label>
                                 <input id="checkbox-1" type="checkbox"></input>
                             </span>
                             {/* login buttons */}
                             <div className="input-button">
-                                <button type="submit" className={styles.button}>
+                                <Link href='dashboard' type="submit" className={styles.button}>
                                     {t("Confirm")}
-                                </button>
+                                </Link>
                             </div>
 
                             <div className="input-button">
-                                <a
+                                <Link
                                     href="mailto:inscription@mesrs.tn"
                                     className={styles.button_custom}
                                 >
@@ -147,10 +146,10 @@ export default function Page() {
                                         height={20}
                                     ></Image>
                                     inscription@mesrs.tn
-                                </a>
+                                </Link>
                             </div>
                             <div className="input-button">
-                                <a href="tel:+216 71 834 746" className={styles.button_custom}>
+                                <Link href="tel:+216 71 834 746" className={styles.button_custom}>
                                     <Image
                                         src={"/assets/mobile.png"}
                                         alt="mobile"
@@ -158,7 +157,7 @@ export default function Page() {
                                         height={25}
                                     ></Image>
                                     (+216) 71 834 746
-                                </a>
+                                </Link>
                             </div>
                         </form>
 

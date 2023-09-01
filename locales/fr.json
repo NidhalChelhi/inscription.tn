@@ -14,7 +14,19 @@
   "Already have an account?": "Vous avez déjà un compte?",
   "CIN or DGCI": "CIN ou Identifiant DGCI",
   "Mobile Phone Number": "Téléphone Mobile",
-  "I accept" : "J'accepte",
-  "The privacy terms" : "Les termes de confidentialité",
-  "Logout" : "Se Déconnecter"
+  "I accept": "J'accepte",
+  "The privacy terms": "Les termes de confidentialité",
+  "Logout": "Se Déconnecter",
+
+  "Website Navigation": "Navigation du Site Web",
+  "Website Navigation Paragraph": "Bienvenue dans l'expérience améliorée d'Inscription.tn ! Naviguez facilement dans votre parcours éducatif grâce à notre page d'accueil modernisée. Accédez à votre compte, inscrivez-vous à des cours et explorez votre tableau de bord personnalisé, le tout en un seul endroit.",
+
+  "Dashboard Page": "Tableau de Bord",
+  "Login Page": "Page Connexion",
+  "Register Page": "Page Création de Compte",
+
+  "Fullname: ": "Nom & Prénom: ",
+  "University: ": "Établissement: ",
+  "Username" : "Nidhal Chelhi",
+  "User University" : "École Nationale D'Ingénieurs de Carthage"
 }

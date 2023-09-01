@@ -9,16 +9,19 @@
 }
 
 .button {
-  @apply w-full border-blue-500 bg-gradient-to-r from-blue-500 to-indigo-500 rounded-2xl;
-  @apply py-3 text-gray-50 text-lg;
-}
-
-.button:hover {
-  @apply border-blue-500 scale-105 transition-all duration-300 ease-in-out;
+  @apply w-full py-3 text-gray-50 text-lg border-blue-500 bg-gradient-to-r from-blue-500 to-indigo-500 rounded-2xl hover:border-blue-500 hover:scale-105 transition-all duration-300 ease-in-out;
 }
 
 .button_custom {
   @apply w-full border rounded-2xl py-3 flex justify-center gap-2 hover:bg-gray-200 hover:scale-105 transition-all duration-300 ease-in-out;
+}
+
+.card_custom {
+  @apply w-full flex justify-center items-center flex-col  p-3 gap-2  rounded-2xl border hover:bg-gray-200 hover:scale-105 transition-all duration-300 ease-in-out;
+}
+
+.card_custom_office {
+  @apply bg-orange-500 w-full flex justify-center items-center flex-col  p-3 gap-2 text-white  rounded-2xl border  hover:text-orange-700 hover:bg-orange-200 hover:scale-105 transition-all duration-300 ease-in-out;
 }
 
 .input_text + * {
