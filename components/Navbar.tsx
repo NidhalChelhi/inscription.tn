@@ -36,8 +36,8 @@ const Navbar = () => {
                     </Link>
                 </div>
 
-                <Link href='/' className="font-extrabold text-[24px] leading-[30.24px] text-gray-800">
-                    Inscription.tn
+                <Link href='/' className="w-44">
+                    <img src="/assets/logo.svg" alt="logo" height={24} className="object-contain" />
                 </Link>
 
                 <div className="flex flex-row items-center justify-between">

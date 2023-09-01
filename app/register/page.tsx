@@ -1,23 +1,39 @@
 "use client";
 import Link from "next/link";
 import styles from "../../styles/Form.module.css";
-import Image from "next/image";
 import { useTranslation } from "react-i18next";
 import { motion } from "framer-motion";
 import { fadeIn } from "@/utils/motions";
-
+import { useFormik } from "formik";
+import { registerValidate } from "../../lib/validate";
+import { TbAlertSquareRounded } from "react-icons/tb";
 import {
     HiOutlineUser,
     HiAtSymbol,
     HiOutlineDeviceMobile,
-    HiOutlineQrcode,
+    HiOutlineQrcode
 } from "react-icons/hi";
 import { useEffect, useState } from "react";
+import CustomEmailButton from "@/components/CustomEmailButton";
+import CustomPhoneButton from "@/components/CustomPhoneButton";
 
 export default function Page() {
     const { t, i18n } = useTranslation();
     const [randomWord, setRandomWord] = useState("insc8");
+    const formik = useFormik({
+        initialValues: {
+            cin: "",
+            email: "",
+            phone: "",
+            code: "",
+        },
+        validate: (values) => registerValidate(values, randomWord),
+        onSubmit,
+    });
 
+    async function onSubmit(values: any) {
+        console.log(values);
+    }
     useEffect(() => {
         const generateRandomWord = () => {
             const characters =
@@ -31,10 +47,9 @@ export default function Page() {
         };
         generateRandomWord();
     }, []);
-
     return (
         <motion.div
-            variants={fadeIn('left', 'spring', 0.5, 1)}
+            variants={fadeIn("left", "spring", 0.5, 1)}
             initial="hidden"
             whileInView="show"
             viewport={{ once: false, amount: 0.25 }}
@@ -63,102 +78,107 @@ export default function Page() {
                         </div>
 
                         {/* form */}
-                        <form className="flex flex-col gap-5">
+                        <form
+                            className="flex flex-col gap-5"
+                            onSubmit={formik.handleSubmit}
+                        >
                             <div className={styles.input_group}>
                                 <input
-                                    type="number"
-                                    name="cin"
+                                    type="text"
                                     placeholder={t("CIN or DGCI")}
                                     className={styles.input_text}
+                                    {...formik.getFieldProps("cin")}
                                 />
                                 <span className="icon flex items-center sm:px-4 px-2">
                                     <HiOutlineUser size={25} />
                                 </span>
                             </div>
+                            {formik.errors.cin && formik.touched.cin ? (
+                                <span className={styles.input_error}>
+                                    <TbAlertSquareRounded size={18} /> {t(formik.errors.cin)}
+                                </span>
+                            ) : (
+                                <></>
+                            )}
                             <div className={styles.input_group}>
                                 <input
                                     type="email"
-                                    name="email"
                                     placeholder={t("Email")}
                                     className={styles.input_text}
+                                    {...formik.getFieldProps("email")}
                                 />
                                 <span className="icon flex items-center sm:px-4 px-2">
                                     <HiAtSymbol size={25} />
                                 </span>
                             </div>
+                            {formik.errors.email && formik.touched.email ? (
+                                <span className={styles.input_error}>
+                                    <TbAlertSquareRounded size={18} /> {t(formik.errors.email)}
+                                </span>
+                            ) : (
+                                <></>
+                            )}
                             <div className={styles.input_group}>
                                 <input
                                     type="tel"
-                                    name="phone"
                                     placeholder={t("Mobile Phone Number")}
                                     className={styles.input_text}
+                                    {...formik.getFieldProps("phone")}
                                 />
                                 <span className="icon flex items-center sm:px-4 px-2">
                                     <HiOutlineDeviceMobile size={25} />
                                 </span>
                             </div>
+                            {formik.errors.phone && formik.touched.phone ? (
+                                <span className={styles.input_error}>
+                                    <TbAlertSquareRounded size={18} /> {t(formik.errors.phone)}
+                                </span>
+                            ) : (
+                                <></>
+                            )}
                             <div className="flex sm:flex-row flex-col gap-4 items-center justify-between">
                                 <div className={`${styles.input_group} flex-grow`}>
                                     <input
                                         type="text"
-                                        name="code"
                                         placeholder={t("Security Code")}
                                         className={styles.input_text}
+                                        {...formik.getFieldProps("code")}
                                     />
                                     <span className="icon flex items-center sm:px-4 px-2">
                                         <HiOutlineQrcode size={25} />
                                     </span>
                                 </div>
+
                                 <div className="flex  rounded-2xl">
                                     <span className="w-full px-6 py-4 border rounded-2xl bg-slate-50 line-through select-none font-bold">
                                         {randomWord}
                                     </span>
                                 </div>
                             </div>
+                            {formik.errors.code && formik.touched.code ? (
+                                <span className={styles.input_error}>
+                                    <TbAlertSquareRounded size={18} /> {t(formik.errors.code)}
+                                </span>
+                            ) : (
+                                <></>
+                            )}
                             <span className="text-blue-700 text-start flex justify-start items-center gap-2">
                                 <label htmlFor="checkbox-1 cursor-pointer">
                                     {t("I accept")}{" "}
-                                    <Link
-                                        href="https://www2.inscription.tn/ORegMx/mentionslegales.jsp" target="_blank"
-                                        className="underline"
-                                    >
+                                    <Link href="legalnotice" className="underline">
                                         {t("The privacy terms")}
                                     </Link>
                                 </label>
                                 <input id="checkbox-1" type="checkbox"></input>
                             </span>
-                            {/* login buttons */}
+                            {/* register buttons */}
                             <div className="input-button">
-                                <Link href='dashboard' type="submit" className={styles.button}>
+                                <button type="submit" className={styles.button}>
                                     {t("Confirm")}
-                                </Link>
+                                </button>
                             </div>
-
-                            <div className="input-button">
-                                <Link
-                                    href="mailto:inscription@mesrs.tn"
-                                    className={styles.button_custom}
-                                >
-                                    <Image
-                                        src={"/assets/email.png"}
-                                        alt="mail"
-                                        width="20"
-                                        height={20}
-                                    ></Image>
-                                    inscription@mesrs.tn
-                                </Link>
-                            </div>
-                            <div className="input-button">
-                                <Link href="tel:+216 71 834 746" className={styles.button_custom}>
-                                    <Image
-                                        src={"/assets/mobile.png"}
-                                        alt="mobile"
-                                        width={25}
-                                        height={25}
-                                    ></Image>
-                                    (+216) 71 834 746
-                                </Link>
-                            </div>
+                            <CustomEmailButton />
+                            <CustomPhoneButton />
                         </form>
 
                         {/* bottom */}

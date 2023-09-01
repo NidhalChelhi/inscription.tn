@@ -2,7 +2,7 @@
   "Login": "تسجيل دخول",
   "Login Paragraph": "لبدء التسجيل الخاص بك عبر الإنترنت، يمكنك تسجيل الدخول باستخدام بريدك الإلكتروني وكلمة المرور الخاصة بك.",
   "Email": "البريد الالكتروني",
-  "Password": "كلمة السر",
+  "Password": "كلمة المرور",
   "Security Code": "رمز الامان",
   "Confirm": "موافق",
   "Forget your Password?": "نسيت كلمة السر؟",
@@ -25,12 +25,32 @@
   "Dashboard Page": "صفحة اللوحة الرئيسية",
   "Login Page": "صفحة تسجيل الدخول",
   "Register Page": "صفحة إنشاء حساب",
+  "Legal Notice Page": "صفحة المعلومات القانونية",
 
 
   "Fullname: ": "الاسم واللقب: ",
   "University: ": "المؤسسة الجامعية: ",
   "Username" : "نضال الشلحي",
-  "User University" : "المدرسة الوطنية للمهندسين بقرطاج"
+  "User University" : "المدرسة الوطنية للمهندسين بقرطاج",
+
+  "Payment" : "الدفع",
+  "Results" : "النتائج",
+  "Student Card" : "بطاقة الطالب",
+  "Informations" : "معلومات الطالب",
+  "Change Password" : "كلمة المرور",
+  "Receipts" : "الإيصالات",
+
+  "Required": "مطلوب",
+  "Invalid CIN": "رقم CIN أو DGCI غير صالح",
+  "Invalid Phone Number": "رقم الهاتف غير صالح",
+  "Invalid email address": "عنوان البريد الإلكتروني غير صالح",
+  "Invalid Security Code (contains spaces)": "رمز الأمان غير صالح",
+  
+  "Invalid Password": "كلمة المرور غير صالحة",
+  "Must be greater then 8 and less then 20 characters long" : "يجب أن يكون طوله أكثر من 8 أحرف وأقل من 20 حرفًا",
+ 
+  "Must be 5 characters long": "يجب أن يتكون من 5 أحرف",
+  "Incorrect Security Code": "رمز الأمان غير صحيح"
 }
 
 

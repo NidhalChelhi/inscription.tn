@@ -24,9 +24,27 @@
   "Dashboard Page": "Tableau de Bord",
   "Login Page": "Page Connexion",
   "Register Page": "Page Création de Compte",
+  "Legal Notice Page": "Page Mentions Légales",
 
   "Fullname: ": "Nom & Prénom: ",
   "University: ": "Établissement: ",
-  "Username" : "Nidhal Chelhi",
-  "User University" : "École Nationale D'Ingénieurs de Carthage"
+  "Username": "Nidhal Chelhi",
+  "User University": "École Nationale D'Ingénieurs de Carthage",
+
+  "Payment": "Paiement",
+  "Results": "Résultats",
+  "Student Card": "Carte Étudiant",
+  "Informations": "Informations",
+  "Change Password": "Mot de Passe",
+  "Receipts": "Reçus",
+
+  "Required": "Requis",
+  "Invalid CIN": "CIN ou DGCI invalide",
+  "Invalid Phone Number": "Numéro de téléphone invalide",
+  "Invalid email address": "Adresse Email invalide",
+  "Invalid Security Code (contains spaces)": "Code de sécurité invalide",
+  "Invalid Password": "Mot de Passe invalide",
+  "Must be greater then 8 and less then 20 characters long": "Doit avoir entre 8 et 20 caractères.",
+  "Must be 5 characters long": "Doit contenir 5 caractères",
+  "Incorrect Security Code": "Code de sécurité incorrect"
 }

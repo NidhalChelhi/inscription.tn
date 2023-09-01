@@ -1,18 +1,34 @@
 "use client";
 import Link from "next/link";
 import styles from "../../styles/Form.module.css";
-import Image from "next/image";
 import { HiAtSymbol, HiFingerPrint, HiOutlineQrcode } from "react-icons/hi";
 import { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
 import { motion } from "framer-motion";
 import { fadeIn } from "@/utils/motions";
+import { useFormik } from "formik";
+import { loginValidate } from "../../lib/validate";
+import { TbAlertSquareRounded } from "react-icons/tb";
+import CustomEmailButton from "@/components/CustomEmailButton";
+import CustomPhoneButton from "@/components/CustomPhoneButton";
 
 export default function Page() {
     const [show, setShow] = useState(false);
     const [randomWord, setRandomWord] = useState("insc8");
     const { t, i18n } = useTranslation();
 
+    const formik = useFormik({
+        initialValues: {
+            email: "",
+            password: "",
+            code: "",
+        },
+        validate: (values) => loginValidate(values, randomWord),
+        onSubmit,
+    });
+    async function onSubmit(values: any) {
+        console.log(values);
+    }
     useEffect(() => {
         const generateRandomWord = () => {
             const characters =
@@ -58,24 +74,34 @@ export default function Page() {
                         </div>
 
                         {/* form */}
-                        <form className="flex flex-col gap-5">
+                        <form
+                            className="flex flex-col gap-5"
+                            onSubmit={formik.handleSubmit}
+                        >
                             <div className={styles.input_group}>
                                 <input
                                     type="email"
-                                    name="email"
                                     placeholder={t("Email")}
                                     className={styles.input_text}
+                                    {...formik.getFieldProps("email")}
                                 />
                                 <span className="icon flex items-center sm:px-4 px-2">
                                     <HiAtSymbol size={25} />
                                 </span>
                             </div>
+                            {formik.errors.email && formik.touched.email ? (
+                                <span className={styles.input_error}>
+                                    <TbAlertSquareRounded size={18} /> {t(formik.errors.email)}
+                                </span>
+                            ) : (
+                                <></>
+                            )}
                             <div className={styles.input_group}>
                                 <input
                                     type={`${show ? "text" : "password"}`}
-                                    name="password"
                                     placeholder={t("Password")}
                                     className={styles.input_text}
+                                    {...formik.getFieldProps("password")}
                                 />
                                 <span
                                     className="icon flex items-center sm:px-4 px-2"
@@ -84,13 +110,20 @@ export default function Page() {
                                     <HiFingerPrint size={25} />
                                 </span>
                             </div>
+                            {formik.errors.password && formik.touched.password ? (
+                                <span className={styles.input_error}>
+                                    <TbAlertSquareRounded size={18} /> {t(formik.errors.password)}
+                                </span>
+                            ) : (
+                                <></>
+                            )}
                             <div className="flex sm:flex-row flex-col gap-4 items-center justify-between">
                                 <div className={`${styles.input_group} flex-grow`}>
                                     <input
                                         type="text"
-                                        name="code"
                                         placeholder={t("Security Code")}
                                         className={styles.input_text}
+                                        {...formik.getFieldProps("code")}
                                     />
                                     <span className="icon flex items-center sm:px-4 px-2">
                                         <HiOutlineQrcode size={25} />
@@ -102,42 +135,26 @@ export default function Page() {
                                     </span>
                                 </div>
                             </div>
+                            {formik.errors.code && formik.touched.code ? (
+                                <span className={styles.input_error}>
+                                    <TbAlertSquareRounded size={18} /> {t(formik.errors.code)}
+                                </span>
+                            ) : (
+                                <></>
+                            )}
 
                             {/* login buttons */}
                             <div className="input-button">
-                                <Link href="dashboard" type="submit" className={styles.button}>
+                                <button type="submit" className={styles.button}>
                                     {t("Confirm")}
-                                </Link>
+                                </button>
                             </div>
 
                             <Link className="text-blue-700 text-start" href={"/forgetpwd"}>
                                 {t("Forget your Password?")}
                             </Link>
-                            <div className="input-button">
-                                <Link
-                                    href="mailto:inscription@mesrs.tn"
-                                    className={styles.button_custom}
-                                >
-                                    <Image
-                                        src={"/assets/email.png"}
-                                        alt="mail"
-                                        width="20"
-                                        height={20}
-                                    ></Image>
-                                    inscription@mesrs.tn
-                                </Link>
-                            </div>
-                            <div className="input-button">
-                                <Link href="tel:+216 71 834 746" className={styles.button_custom}>
-                                    <Image
-                                        src={"/assets/mobile.png"}
-                                        alt="mobile"
-                                        width={25}
-                                        height={25}
-                                    ></Image>
-                                    (+216) 71 834 746
-                                </Link>
-                            </div>
+                            <CustomEmailButton />
+                            <CustomPhoneButton />
                         </form>
 
                         {/* bottom */}

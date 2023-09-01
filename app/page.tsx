@@ -2,10 +2,11 @@
 import Link from "next/link";
 import styles from "../styles/Form.module.css";
 import Image from "next/image";
-
 import { useTranslation } from "react-i18next";
 import { motion } from "framer-motion";
 import { fadeIn } from "@/utils/motions";
+import CustomEmailButton from "@/components/CustomEmailButton";
+import CustomPhoneButton from "@/components/CustomPhoneButton";
 
 export default function Home() {
   const { t, i18n } = useTranslation();
@@ -63,35 +64,28 @@ export default function Home() {
             ></Image>
             {t("Register Page")}
           </Link>
-
-          <Link
-            href="mailto:inscription@mesrs.tn"
-            className={styles.button_custom}
-          >
+          <Link href="legalnotice" className={styles.button_custom}>
             <Image
-              src={"/assets/email.png"}
-              alt="mail"
+              src={"/assets/legal.png"}
+              alt="legal notice"
               width={24}
               height={24}
             ></Image>
-            inscription@mesrs.tn
+            {t("Legal Notice Page")}
           </Link>
+          <CustomEmailButton />
+          <CustomPhoneButton />
 
-          <Link href="tel:+216 71 834 746" className={styles.button_custom}>
-            <Image
-              src={"/assets/mobile.png"}
-              alt="mobile"
-              width={24}
-              height={24}
-              className="object-cover"
-            ></Image>
-            (+216) 71 834 746
-          </Link>
+
         </div>
 
         <p className="text-center text-gray-400 ">
           Made with <span className="animate-pulse">❤️</span> by:{" "}
-          <Link className="text-red-600 font-semibold" href="https://nidhalchelhi.vercel.app" target="_blank">
+          <Link
+            className="text-red-600 font-semibold"
+            href="https://nidhalchelhi.vercel.app"
+            target="_blank"
+          >
             Nidhal Chelhi
           </Link>
         </p>
