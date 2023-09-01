@@ -35,9 +35,12 @@ export default function Home() {
                     Création de compte
                 </h1>
                 <p className="w-auto mx-auto text-gray-400">
-
-                    Pour créer votre compte sur inscription.tn, veuillez remplir le formulaire ci-dessous. Vous receverez un email d'activation et votre mot de passe par email.
-                    Veuillez utiliser votre numéro de carte d'identité nationale (CIN) ou, pour les étudiants étrangers, l'identifiant DGCI délivré par la Direction Générale de la Coopération Internationale du MESRS.
+                    Pour créer votre compte sur inscription.tn, veuillez remplir le
+                    formulaire ci-dessous. Vous receverez un email d'activation et votre
+                    mot de passe par email. Veuillez utiliser votre numéro de carte
+                    d'identité nationale (CIN) ou, pour les étudiants étrangers,
+                    l'identifiant DGCI délivré par la Direction Générale de la Coopération
+                    Internationale du MESRS.
                 </p>
             </div>
 
@@ -50,7 +53,7 @@ export default function Home() {
                         placeholder="CIN ou Identifiant DGCI"
                         className={styles.input_text}
                     />
-                    <span className="icon flex items-center px-4">
+                    <span className="icon flex items-center sm:pr-4 pr-2">
                         <HiOutlineUser size={25} />
                     </span>
                 </div>
@@ -61,7 +64,7 @@ export default function Home() {
                         placeholder="Email"
                         className={styles.input_text}
                     />
-                    <span className="icon flex items-center px-4">
+                    <span className="icon flex items-center sm:pr-4 pr-2">
                         <HiAtSymbol size={25} />
                     </span>
                 </div>
@@ -72,7 +75,7 @@ export default function Home() {
                         placeholder="Telephone mobile"
                         className={styles.input_text}
                     />
-                    <span className="icon flex items-center px-4">
+                    <span className="icon flex items-center sm:pr-4 pr-2">
                         <HiOutlineDeviceMobile size={25} />
                     </span>
                 </div>
@@ -84,21 +87,27 @@ export default function Home() {
                             placeholder="Code de Securité"
                             className={styles.input_text}
                         />
-                        <span className="icon flex items-center px-4">
+                        <span className="icon flex items-center sm:pr-4 pr-2">
                             <HiOutlineQrcode size={25} />
                         </span>
                     </div>
-                    <div className={`${styles.input_group}`}>
-                        <span
-                            className={`${styles.input_text} line-through  select-none	font-bold`}
-                        >
+                    <div className="flex  rounded-2xl">
+                        <span className="w-full px-6 py-4 border rounded-2xl bg-slate-50 line-through select-none font-bold">
                             {randomWord}
                         </span>
                     </div>
                 </div>
                 <span className="text-blue-700 text-end flex justify-end items-center gap-2">
-                    <label htmlFor="checkbox-1 cursor-pointer">J'accepte <a href="https://www2.inscription.tn/ORegMx/mentionslegales.jsp" className="underline">les termes de confidentialité</a></label>
-                    <input id="checkbox-1" type="checkbox"  ></input>
+                    <label htmlFor="checkbox-1 cursor-pointer">
+                        J'accepte{" "}
+                        <a
+                            href="https://www2.inscription.tn/ORegMx/mentionslegales.jsp"
+                            className="underline"
+                        >
+                            les termes de confidentialité
+                        </a>
+                    </label>
+                    <input id="checkbox-1" type="checkbox"></input>
                 </span>
                 {/* login buttons */}
                 <div className="input-button">
@@ -136,7 +145,7 @@ export default function Home() {
 
             {/* bottom */}
             <p className="text-center text-gray-400 ">
-                Vous avez déjà un compte? {' '}
+                Vous avez déjà un compte?{" "}
                 <Link className="text-blue-700" href={"/"}>
                     Se Connecter
                 </Link>

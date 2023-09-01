@@ -42,7 +42,7 @@ export default function Home() {
             placeholder="Email"
             className={styles.input_text}
           />
-          <span className="icon flex items-center px-4">
+          <span className="icon flex items-center sm:pr-4 pr-2">
             <HiAtSymbol size={25} />
           </span>
         </div>
@@ -54,7 +54,7 @@ export default function Home() {
             className={styles.input_text}
           />
           <span
-            className="icon flex items-center px-4"
+            className="icon flex items-center sm:pr-4 pr-2"
             onClick={() => setShow(!show)}
           >
             <HiFingerPrint size={25} />
@@ -68,12 +68,14 @@ export default function Home() {
               placeholder="Code de Securité"
               className={styles.input_text}
             />
-            <span className="icon flex items-center px-4">
+            <span className="icon flex items-center sm:pr-4 pr-2">
               <HiOutlineQrcode size={25} />
             </span>
           </div>
-          <div className={`${styles.input_group}`}>
-            <span className={`${styles.input_text} line-through  select-none	font-bold`}>{randomWord}</span>
+          <div className="flex  rounded-2xl">
+            <span className="w-full px-6 py-4 border rounded-2xl bg-slate-50 line-through select-none font-bold">
+              {randomWord}
+            </span>
           </div>
         </div>
 

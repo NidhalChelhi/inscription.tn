@@ -4,7 +4,7 @@
 }
 
 .input_text {
-  @apply w-full py-4 px-6 border rounded-2xl bg-slate-50;
+  @apply w-full py-4 sm:pl-6 pl-3 border rounded-2xl bg-slate-50;
   @apply focus:outline-none border-none;
 }
 
