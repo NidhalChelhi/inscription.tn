@@ -1,0 +1,39 @@
+.input_group {
+  @apply flex border rounded-2xl;
+  position: relative;
+}
+
+.input_text {
+  @apply w-full py-4 px-6 border rounded-2xl bg-slate-50;
+  @apply focus:outline-none border-none;
+}
+
+.button {
+  @apply w-full border-blue-500 bg-gradient-to-r from-blue-500 to-indigo-500 rounded-2xl;
+  @apply py-3 text-gray-50 text-lg;
+}
+
+.button:hover {
+  @apply border-blue-500 scale-105 transition-all duration-300 ease-in-out;
+}
+
+.button_custom {
+  @apply w-full border rounded-2xl py-3 flex justify-center gap-2 hover:bg-gray-200 hover:scale-105 transition-all duration-300 ease-in-out;
+}
+
+.input_text + * {
+  color: #cbd5e1;
+}
+
+.input_text:focus + * {
+  color: #6366f1;
+}
+
+.input_text:not([type="email"]):not([type="text"]):not([type="number"]):not(
+    [type="tel"]
+  )
+  ~ span:hover
+  * {
+  color: #6366f1;
+  cursor: pointer;
+}
