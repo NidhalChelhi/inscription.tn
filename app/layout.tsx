@@ -1,11 +1,14 @@
-"use client";
 import Navbar from "@/components/Navbar";
 import "./globals.css";
+import type { Metadata } from "next";
 import Footer from "@/components/Footer";
 import { motion } from "framer-motion";
 import { fadeIn, } from "@/utils/motions";
 
-
+export const metadata: Metadata = {
+  title: "Inscription.tn",
+  description: "Inscription Universitaire en Ligne",
+};
 
 export default function RootLayout({
   children,
@@ -18,11 +21,11 @@ export default function RootLayout({
       <body className="h-screen bg-blue-50">
         <Navbar />
         <div className="flex items-center justify-center ">
-          <motion.div
-            variants={fadeIn('left', 'spring', 0.5, 1)}
-            initial="hidden"
-            whileInView="show"
-            viewport={{ once: false, amount: 0.25 }}
+          <div
+            // variants={fadeIn('left', 'spring', 0.5, 1)}
+            // initial="hidden"
+            // whileInView="show"
+            // viewport={{ once: false, amount: 0.25 }}
             className="m-auto bg-slate-50 rounded-3xl w-5/6 h-auto grid lg:grid-cols-2 drop-shadow-2xl"
           >
             <div className="w-full rounded-l-3xl relative overflow-hidden">
@@ -31,7 +34,7 @@ export default function RootLayout({
             <div className="right flex flex-col justify-center">
               <div className="text-center py-10">{children}</div>
             </div>
-          </motion.div>
+          </div>
         </div>
         <Footer />
       </body>
