@@ -82,7 +82,7 @@ export default function Home() {
         <p className="text-center text-gray-400 ">
           Made with <span className="animate-pulse">❤️</span> by:{" "}
           <Link
-            className="text-red-600 font-semibold"
+            className="text-red-600 font-semibold truncate"
             href="https://nidhalchelhi.vercel.app"
             target="_blank"
           >
