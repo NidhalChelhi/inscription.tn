@@ -1,0 +1,20 @@
+{
+  "Login": "Se Connecter",
+  "Login Paragraph": "Pour commencer votre inscription en ligne, vous pouvez vous identifier par votre email et mot de passe.",
+  "Email": "Email",
+  "Password": "Mot de Passe",
+  "Security Code": "Code de Securité",
+  "Confirm": "Valider",
+  "Forget your Password?": "Mot de passe oublié?",
+  "Don't have an account yet?": "Je n'ai pas encore de compte?",
+  "Create an account": "Je crée mon compte",
+
+  "Register": "Création de compte",
+  "Register Paragraph": "Pour créer votre compte sur inscription.tn, veuillez remplir le formulaire ci-dessous. Vous receverez un email d'activation et votre mot de passe par email. Veuillez utiliser votre numéro de carte d'identité nationale (CIN) ou, pour les étudiants étrangers, l'identifiant DGCI délivré par la Direction Générale de la Coopération Internationale du MESRS.",
+  "Already have an account?": "Vous avez déjà un compte?",
+  "CIN or DGCI": "CIN ou Identifiant DGCI",
+  "Mobile Phone Number": "Téléphone Mobile",
+  "I accept" : "J'accepte",
+  "The privacy terms" : "Les termes de confidentialité",
+  "Logout" : "Se Déconnecter"
+}

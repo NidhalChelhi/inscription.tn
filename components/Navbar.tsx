@@ -5,8 +5,14 @@ import { motion } from "framer-motion";
 import { useState } from "react";
 import { BsFacebook, BsTwitter } from "react-icons/bs";
 import { GiTunisia, GiFrance } from "react-icons/gi";
+import { useTranslation } from "react-i18next";
 
 const Navbar = () => {
+    const { t, i18n } = useTranslation();
+
+    const toggleLanguage = (language: string) => {
+        i18n.changeLanguage(language);
+    };
     const [toggle, setToggle] = useState(false);
 
     return (
@@ -28,17 +34,29 @@ const Navbar = () => {
 
                 <div className="flex flex-row items-center justify-between">
                     {toggle ? (
-                        <div className="flex flex-row" onClick={() => setToggle(!toggle)}>
-                            <GiTunisia size={24} className="mx-1 object-contain" />
-                            <h2 className="font-bold text-[18px] leading-[30.24px] text-black">
-                                AR
-                            </h2>
-                        </div>
-                    ) : (
-                        <div className="flex flex-row" onClick={() => setToggle(!toggle)}>
+                        <div
+                            className="flex flex-row"
+                            onClick={() => {
+                                setToggle(!toggle);
+                                toggleLanguage("fr");
+                            }}
+                        >
                             <GiFrance size={24} className="mx-1 object-contain" />
                             <h2 className="font-bold text-[18px] leading-[30.24px] text-black">
                                 FR
+                            </h2>
+                        </div>
+                    ) : (
+                        <div
+                            className="flex flex-row"
+                            onClick={() => {
+                                setToggle(!toggle);
+                                toggleLanguage("ar");
+                            }}
+                        >
+                            <GiTunisia size={24} className="mx-1 object-contain" />
+                            <h2 className="font-bold text-[18px] leading-[30.24px] text-black">
+                                AR
                             </h2>
                         </div>
                     )}

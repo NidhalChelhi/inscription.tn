@@ -4,123 +4,87 @@ import styles from "../styles/Form.module.css";
 import Image from "next/image";
 import { HiAtSymbol, HiFingerPrint, HiOutlineQrcode } from "react-icons/hi";
 import { useEffect, useState } from "react";
+import { useTranslation } from "react-i18next";
+import { motion } from "framer-motion";
+import { fadeIn } from "@/utils/motions";
 
 export default function Home() {
-  const [show, setShow] = useState(false);
-  const [randomWord, setRandomWord] = useState('');
 
-  useEffect(() => {
-    const generateRandomWord = () => {
-      const characters = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
-      let word = '';
-      for (let i = 0; i < 5; i++) {
-        const randomIndex = Math.floor(Math.random() * characters.length);
-        word += characters[randomIndex];
-      }
-      setRandomWord(word);
-    };
-    generateRandomWord();
-  }, []);
+  const { t, i18n } = useTranslation();
+
+  const [session, setSession] = useState(false)
 
   return (
-    <section className="w-3/4 mx-auto flex flex-col gap-10">
+    <motion.div
+      variants={fadeIn("left", "spring", 0.5, 1)}
+      initial="hidden"
+      whileInView="show"
+      viewport={{ once: false, amount: 0.25 }}
+      className="m-auto bg-slate-50 rounded-3xl w-5/6 h-auto flex flex-col justify-center drop-shadow-2xl"
+    >
+
+      <div className="text-center py-10">
+        <section
+          className="w-3/4 mx-auto flex flex-col gap-10"
+          style={
+            i18n.language === "ar"
+              ? { direction: "rtl" }
+              : { direction: "ltr" }
+          }
+        >
+
+
+          {session ? User() : Guest()}
+        </section>
+      </div>
+    </motion.div>
+  );
+}
+
+// Guest
+function Guest() {
+  return (
+    <main>
       <div className="title">
-        <h1 className="text-gray-800 text-4xl font-bold py-4">Se Connecter
+        <h1 className="text-gray-800 text-4xl font-bold py-4">
+          Guest Home Page
         </h1>
-        <p className="w-auto mx-auto text-gray-400">
-          Pour commencer votre inscription en ligne, vous pouvez vous identifier
-          par votre email et mot de passe.
-        </p>
+      </div>
+      <div className="flex justify-center">
+        <Link
+          href="login"
+          className="mt-5 px-10 py-1 rounded-sm bg-indigo-500 text-gray-50"
+        >
+          Login
+        </Link>
+        <Link
+          href="login"
+          className="mt-5 px-10 py-1 rounded-sm bg-indigo-500 text-gray-50"
+        >
+          Register
+        </Link>
+      </div>
+    </main>
+  );
+}
+
+// Authorized User
+function User() {
+  return (
+    <main>
+      <div className="title">
+        <h1 className="text-gray-800 text-4xl font-bold py-4">
+          User Home Page
+        </h1>
+      </div>
+      <div>
+        <h5>Unknown</h5>
+        <h5>Unknown</h5>
+        <Link className="text-center text-blue-700" href={"/login"}>
+          "Logout"
+        </Link>
       </div>
 
-      {/* form */}
-      <form className="flex flex-col gap-5">
-        <div className={styles.input_group}>
-          <input
-            type="email"
-            name="email"
-            placeholder="Email"
-            className={styles.input_text}
-          />
-          <span className="icon flex items-center sm:pr-4 pr-2">
-            <HiAtSymbol size={25} />
-          </span>
-        </div>
-        <div className={styles.input_group}>
-          <input
-            type={`${show ? "text" : "password"}`}
-            name="password"
-            placeholder="Mot de Passe"
-            className={styles.input_text}
-          />
-          <span
-            className="icon flex items-center sm:pr-4 pr-2"
-            onClick={() => setShow(!show)}
-          >
-            <HiFingerPrint size={25} />
-          </span>
-        </div>
-        <div className="flex sm:flex-row flex-col gap-4 items-center justify-between">
-          <div className={`${styles.input_group} flex-grow`}>
-            <input
-              type="text"
-              name="code"
-              placeholder="Code de Securité"
-              className={styles.input_text}
-            />
-            <span className="icon flex items-center sm:pr-4 pr-2">
-              <HiOutlineQrcode size={25} />
-            </span>
-          </div>
-          <div className="flex  rounded-2xl">
-            <span className="w-full px-6 py-4 border rounded-2xl bg-slate-50 line-through select-none font-bold">
-              {randomWord}
-            </span>
-          </div>
-        </div>
-
-
-        {/* login buttons */}
-        <div className="input-button">
-          <button type="submit" className={styles.button}>
-            Valider
-          </button>
-        </div>
-
-        <Link className="text-blue-700 text-end" href={"/register"}>
-          Mot de passe oublié?
-        </Link>
-        <div className="input-button">
-          <a href="mailto:inscription@mesrs.tn" className={styles.button_custom}>
-            <Image
-              src={"/assets/email.png"}
-              alt="mail"
-              width="20"
-              height={20}
-            ></Image>
-            inscription@mesrs.tn
-          </a>
-        </div>
-        <div className="input-button">
-          <a href="tel:+216 71 834 746" className={styles.button_custom}>
-            <Image
-              src={"/assets/mobile.png"}
-              alt="mobile"
-              width={25}
-              height={25}
-            ></Image>
-            (+216) 71 834 746
-          </a>
-        </div>
-      </form>
-
-      {/* bottom */}
-      <p className="text-center text-gray-400 ">
-        Je n'ai pas encore de compte?{" "}
-        <Link className="text-blue-700" href={"/register"}>
-          Je crée mon compte
-        </Link>
-      </p>
-    </section>
+    </main>
   );
 }

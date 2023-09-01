@@ -2,21 +2,16 @@
 import Link from "next/link";
 import styles from "../../styles/Form.module.css";
 import Image from "next/image";
+import { HiAtSymbol, HiFingerPrint, HiOutlineQrcode } from "react-icons/hi";
+import { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
 import { motion } from "framer-motion";
 import { fadeIn } from "@/utils/motions";
 
-import {
-    HiOutlineUser,
-    HiAtSymbol,
-    HiOutlineDeviceMobile,
-    HiOutlineQrcode,
-} from "react-icons/hi";
-import { useEffect, useState } from "react";
-
 export default function Page() {
-    const { t, i18n } = useTranslation();
+    const [show, setShow] = useState(false);
     const [randomWord, setRandomWord] = useState("insc8");
+    const { t, i18n } = useTranslation();
 
     useEffect(() => {
         const generateRandomWord = () => {
@@ -56,26 +51,15 @@ export default function Page() {
                     >
                         <div className="title">
                             <h1 className="text-gray-800 text-4xl font-bold py-4">
-                                {t("Register")}
+                                {t("Login")}
                             </h1>
                             <p className="w-auto mx-auto text-gray-400">
-                                {t("Register Paragraph")}
+                                {t("Login Paragraph")}
                             </p>
                         </div>
 
                         {/* form */}
                         <form className="flex flex-col gap-5">
-                            <div className={styles.input_group}>
-                                <input
-                                    type="number"
-                                    name="cin"
-                                    placeholder={t("CIN or DGCI")}
-                                    className={styles.input_text}
-                                />
-                                <span className="icon flex items-center sm:px-4 px-2">
-                                    <HiOutlineUser size={25} />
-                                </span>
-                            </div>
                             <div className={styles.input_group}>
                                 <input
                                     type="email"
@@ -89,13 +73,16 @@ export default function Page() {
                             </div>
                             <div className={styles.input_group}>
                                 <input
-                                    type="tel"
-                                    name="phone"
-                                    placeholder={t("Mobile Phone Number")}
+                                    type={`${show ? "text" : "password"}`}
+                                    name="password"
+                                    placeholder={t("Password")}
                                     className={styles.input_text}
                                 />
-                                <span className="icon flex items-center sm:px-4 px-2">
-                                    <HiOutlineDeviceMobile size={25} />
+                                <span
+                                    className="icon flex items-center sm:px-4 px-2"
+                                    onClick={() => setShow(!show)}
+                                >
+                                    <HiFingerPrint size={25} />
                                 </span>
                             </div>
                             <div className="flex sm:flex-row flex-col gap-4 items-center justify-between">
@@ -116,18 +103,7 @@ export default function Page() {
                                     </span>
                                 </div>
                             </div>
-                            <span className="text-blue-700 text-start flex justify-start items-center gap-2">
-                                <label htmlFor="checkbox-1 cursor-pointer">
-                                    {t("I accept")}{" "}
-                                    <a
-                                        href="https://www2.inscription.tn/ORegMx/mentionslegales.jsp"
-                                        className="underline"
-                                    >
-                                        {t("The privacy terms")}
-                                    </a>
-                                </label>
-                                <input id="checkbox-1" type="checkbox"></input>
-                            </span>
+
                             {/* login buttons */}
                             <div className="input-button">
                                 <button type="submit" className={styles.button}>
@@ -135,6 +111,9 @@ export default function Page() {
                                 </button>
                             </div>
 
+                            <Link className="text-blue-700 text-start" href={"/register"}>
+                                {t("Forget your Password?")}
+                            </Link>
                             <div className="input-button">
                                 <a
                                     href="mailto:inscription@mesrs.tn"
@@ -164,9 +143,9 @@ export default function Page() {
 
                         {/* bottom */}
                         <p className="text-center text-gray-400 ">
-                            {t("Already have an account?")}{" "}
-                            <Link className="text-blue-700" href={"login"}>
-                                {t("Login")}
+                            {t("Don't have an account yet?")}{" "}
+                            <Link className="text-blue-700" href={"/register"}>
+                                {t("Create an account")}
                             </Link>
                         </p>
                     </section>
