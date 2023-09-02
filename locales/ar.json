@@ -40,7 +40,14 @@
   "Change Password" : "كلمة المرور",
   "Receipts" : "الإيصالات",
 
-  "Required": "مطلوب",
+
+
+  "Code Required": "الرمز مطلوب",
+  "Email Required": "البريد الإلكتروني مطلوب",
+  "Password Required": "كلمة المرور مطلوبة",
+  "CIN Required":"رقم CIN أو DGCI مطلوب",
+  "Phone Required": "رقم الهاتف مطلوب",
+
   "Invalid CIN": "رقم CIN أو DGCI غير صالح",
   "Invalid Phone Number": "رقم الهاتف غير صالح",
   "Invalid email address": "عنوان البريد الإلكتروني غير صالح",
@@ -50,7 +57,11 @@
   "Must be greater then 8 and less then 20 characters long" : "يجب أن يكون طوله أكثر من 8 أحرف وأقل من 20 حرفًا",
  
   "Must be 5 characters long": "يجب أن يتكون من 5 أحرف",
-  "Incorrect Security Code": "رمز الأمان غير صحيح"
+  "Incorrect Security Code": "رمز الأمان غير صحيح",
+  "Please accept the privacy terms" :"الرجاء قبول شروط الخصوصية",
+  "Login Successful" :   "تم تسجيل الدخول بنجاح",
+  "Register Successful" :  "تم التسجيل بنجاح"
+
 }
 
 
