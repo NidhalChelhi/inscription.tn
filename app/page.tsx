@@ -5,8 +5,14 @@ import Image from "next/image";
 import { useTranslation } from "react-i18next";
 import { motion } from "framer-motion";
 import { fadeIn } from "@/utils/motions";
-import CustomEmailButton from "@/components/CustomEmailButton";
-import CustomPhoneButton from "@/components/CustomPhoneButton";
+import {
+  CustomEmailButton,
+  CustomFAQButton,
+  CustomGuideButton,
+  CustomLegalNoticeButton,
+  CustomPhoneButton,
+  CustomUniversitiesButton,
+} from "@/components";
 
 export default function Home() {
   const { t, i18n } = useTranslation();
@@ -34,15 +40,17 @@ export default function Home() {
           </p>
         </div>
 
-        <div className="md:w-full w-full grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-5">
+        <div className="w-full grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-5">
           <Link href="dashboard" className={styles.button_custom}>
             <Image
               src={"/assets/dashboard.png"}
               alt="dashboard"
               width={24}
               height={24}
+              className="object-contain"
             ></Image>
-            {t("Dashboard Page")}
+
+            <p className="flex-grow">{t("Dashboard Page")}</p>
           </Link>
 
           <Link href="login" className={styles.button_custom}>
@@ -51,8 +59,9 @@ export default function Home() {
               alt="login"
               width={24}
               height={24}
+              className="object-contain"
             ></Image>
-            {t("Login Page")}
+            <p className="flex-grow">{t("Login Page")}</p>
           </Link>
 
           <Link href="register" className={styles.button_custom}>
@@ -61,22 +70,16 @@ export default function Home() {
               alt="register"
               width={24}
               height={24}
+              className="object-contain"
             ></Image>
-            {t("Register Page")}
+            <p className="flex-grow">{t("Register Page")}</p>
           </Link>
-          <Link href="legalnotice" className={styles.button_custom}>
-            <Image
-              src={"/assets/legal.png"}
-              alt="legal notice"
-              width={24}
-              height={24}
-            ></Image>
-            {t("Legal Notice Page")}
-          </Link>
+          <CustomLegalNoticeButton />
+          <CustomFAQButton />
+          <CustomGuideButton />
           <CustomEmailButton />
           <CustomPhoneButton />
-
-
+          <CustomUniversitiesButton />
         </div>
 
         <p className="text-center text-gray-400 ">

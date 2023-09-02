@@ -1,11 +1,11 @@
 "use client";
 import { useTranslation } from "react-i18next";
 
-import { legalNotice } from "@/constants";
+import { guide } from "@/constants";
 import {
   CustomEmailButton,
   CustomFAQButton,
-  CustomGuideButton,
+  CustomLegalNoticeButton,
   CustomPhoneButton,
 } from "@/components";
 
@@ -24,32 +24,36 @@ export default function Page() {
       >
         {/* Header */}
         <div className="flex flex-col gap-12 py-2">
-          <div className="flex flex-col gap-2">
-            <h1 className="font-bold text-gray-800 md:text-4xl text-2xl">
-              Guide - Inscription en ligne
-            </h1>
-            <p className="w-auto mx-auto text-gray-400">
-              Les mentions légales visent les conditions juridiques,
-              informations légales relatives à l'utilisation du site web
-              www.inscription.tn. Elles visent également la protection des
-              données personnelles et la protection des droits de propriété
-              intellectuelle.
-            </p>
-          </div>
-          {legalNotice.map((item, index) => (
-            <div key={index} className="flex flex-col gap-0">
+          <h1 className="font-bold text-gray-800 md:text-4xl text-2xl">
+            Guide - Inscription en ligne
+          </h1>
+
+          {guide.map((item, index) => (
+            <div key={index} className="flex flex-col gap-4">
               <h2 className="font-bold text-gray-800 md:text-2xl text-lg">
-                {item.title}
+                {item.phase}
               </h2>
-              <p className="w-auto mx-auto text-gray-400 ">{item.paragraph}</p>
+              <div className="flex flex-col gap-2 ">
+                {item.etapes.map((etape, index) => (
+                  <h3
+                    key={index}
+                    className="font-semibold text-gray-700 md:text-xl text-sm"
+                  >
+                    {etape.title}{" "}
+                    <span className="w-auto mx-auto text-gray-400 font-normal md:text-base text-xs">
+                      {etape.text}
+                    </span>
+                  </h3>
+                ))}{" "}
+              </div>
             </div>
           ))}
         </div>
 
         {/* Footer */}
         <div className="md:w-full w-full grid md:grid-cols-2 grid-cols-1 gap-5">
+          <CustomLegalNoticeButton />
           <CustomFAQButton />
-          <CustomGuideButton />
           <CustomEmailButton />
           <CustomPhoneButton />
         </div>

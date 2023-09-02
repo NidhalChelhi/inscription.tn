@@ -13,11 +13,11 @@
 }
 
 .button_custom {
-  @apply w-full border rounded-2xl py-3 flex justify-center gap-2 hover:bg-gray-200 hover:scale-105 transition-all duration-300 ease-in-out;
+  @apply w-full border rounded-2xl py-4 px-4 flex sm:flex-row flex-col items-center justify-center gap-2 hover:bg-gray-200 hover:scale-105 transition-all duration-300 ease-in-out;
 }
 
 .card_custom {
-  @apply w-full flex justify-center items-center flex-col  p-3 gap-2  rounded-2xl border hover:bg-gray-200 hover:scale-105 transition-all duration-300 ease-in-out;
+  @apply w-full flex justify-center items-center flex-col p-3 gap-2  rounded-2xl border hover:bg-gray-200 hover:scale-105 transition-all duration-300 ease-in-out;
 }
 
 .card_custom_office {

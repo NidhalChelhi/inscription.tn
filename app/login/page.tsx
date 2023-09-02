@@ -8,10 +8,10 @@ import { motion } from "framer-motion";
 import { fadeIn } from "@/utils/motions";
 import { useFormik } from "formik";
 import { loginValidate } from "../../lib/validate";
-import CustomEmailButton from "@/components/CustomEmailButton";
-import CustomPhoneButton from "@/components/CustomPhoneButton";
+
 import { toast } from "react-toastify";
 import { useRouter } from "next/navigation";
+import { CustomEmailButton, CustomPhoneButton } from "@/components";
 
 export default function Page() {
   const [show, setShow] = useState(false);

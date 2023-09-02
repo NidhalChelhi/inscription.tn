@@ -1,12 +1,11 @@
 "use client";
-import Navbar from "@/components/Navbar";
 import "./globals.css";
-import Footer from "@/components/Footer";
 import { I18nextProvider } from "react-i18next";
 import i18n from "../context/i18n";
 import { ToastContainer } from "react-toastify";
 
 import "react-toastify/dist/ReactToastify.css";
+import { Footer, Navbar } from "@/components";
 
 export default function RootLayout({
   children,

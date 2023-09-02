@@ -13,10 +13,10 @@ import { motion } from "framer-motion";
 import { fadeIn } from "@/utils/motions";
 import { useFormik } from "formik";
 import { registerValidate } from "../../lib/validate";
-import CustomEmailButton from "@/components/CustomEmailButton";
-import CustomPhoneButton from "@/components/CustomPhoneButton";
+
 import { toast } from "react-toastify";
 import { useRouter } from "next/navigation";
+import { CustomEmailButton, CustomPhoneButton } from "@/components";
 
 export default function Page() {
   const [isChecked, setIsChecked] = useState(false);
@@ -39,8 +39,8 @@ export default function Page() {
 
     if (Object.keys(validationErrors).length === 0 && isChecked) {
       // Step 3
-      toast.success(t("Register Successful"));
-      router.push("/dashboard");
+      toast.success(t("Register Successful", { autoClose: 7000 }));
+      router.push("/login");
     } else {
       const errorMessages = Object.keys(validationErrors).map((key) =>
         t(validationErrors[key as keyof typeof validationErrors])
