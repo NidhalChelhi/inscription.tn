@@ -1,12 +1,13 @@
 "use client";
 import styles from "../../styles/Form.module.css";
-import { HiOutlineUser, HiAtSymbol, HiOutlineQrcode } from "react-icons/hi";
-import { useEffect, useState } from "react";
+import { HiOutlineUser, HiAtSymbol } from "react-icons/hi";
+import { TbMessage2 } from "react-icons/tb";
+import { LuMailQuestion } from "react-icons/lu";
 import { useTranslation } from "react-i18next";
 import { motion } from "framer-motion";
 import { fadeIn } from "@/utils/motions";
 import { useFormik } from "formik";
-import { forgetpwdValidate } from "../../lib/validate";
+import { contactValidate, forgetpwdValidate } from "../../lib/validate";
 
 import { toast } from "react-toastify";
 import { useRouter } from "next/navigation";
@@ -19,24 +20,23 @@ import {
 
 export default function Page() {
   const { t, i18n } = useTranslation();
-  const [randomWord, setRandomWord] = useState("insc8");
   const router = useRouter();
   const formik = useFormik({
     initialValues: {
-      cin: "",
+      name: "",
       email: "",
-      code: "",
+      subject: "",
+      message: "",
     },
     onSubmit: onSubmit,
   });
 
   // Handle form submission
   async function onSubmit(values: any) {
-    const validationErrors = forgetpwdValidate(values, randomWord);
-
+    const validationErrors = contactValidate(values);
     if (Object.keys(validationErrors).length === 0) {
-      toast.success(t("Forget PWD Successful", { autoClose: 7000 }));
-      router.push("/login");
+      toast.success(t("Message Recieved", { autoClose: 15000 }));
+      router.push("/");
     } else {
       const errorMessages = Object.keys(validationErrors).map((key) =>
         t(validationErrors[key as keyof typeof validationErrors])
@@ -46,19 +46,7 @@ export default function Page() {
       });
     }
   }
-  useEffect(() => {
-    const generateRandomWord = () => {
-      const characters =
-        "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
-      let word = "";
-      for (let i = 0; i < 5; i++) {
-        const randomIndex = Math.floor(Math.random() * characters.length);
-        word += characters[randomIndex];
-      }
-      setRandomWord(word);
-    };
-    generateRandomWord();
-  }, []);
+
   return (
     <motion.div
       variants={fadeIn("left", "spring", 0.5, 1)}
@@ -82,11 +70,8 @@ export default function Page() {
           >
             <div className="title">
               <h1 className="text-gray-800 text-4xl font-bold py-4">
-                {t("Forget your Password?")}
+                {t("Contact Page")}
               </h1>
-              <p className="w-auto mx-auto text-gray-400">
-                {t("Forget PWD Paragraph")}
-              </p>
             </div>
 
             {/* form */}
@@ -97,9 +82,9 @@ export default function Page() {
               <div className={styles.input_group}>
                 <input
                   type="text"
-                  placeholder={t("CIN or DGCI")}
+                  placeholder={t("Fullname")}
                   className={styles.input_text}
-                  {...formik.getFieldProps("cin")}
+                  {...formik.getFieldProps("name")}
                 />
                 <span className="icon flex items-center sm:px-4 px-2">
                   <HiOutlineUser size={25} />
@@ -118,24 +103,27 @@ export default function Page() {
                 </span>
               </div>
 
-              <div className="flex sm:flex-row flex-col gap-4 items-center justify-between">
-                <div className={`${styles.input_group} flex-grow`}>
-                  <input
-                    type="text"
-                    placeholder={t("Security Code")}
-                    className={styles.input_text}
-                    {...formik.getFieldProps("code")}
-                  />
-                  <span className="icon flex items-center sm:px-4 px-2">
-                    <HiOutlineQrcode size={25} />
-                  </span>
-                </div>
+              <div className={styles.input_group}>
+                <input
+                  type="text"
+                  placeholder={t("Subject")}
+                  className={styles.input_text}
+                  {...formik.getFieldProps("subject")}
+                />
+                <span className="icon flex items-center sm:px-4 px-2">
+                  <LuMailQuestion size={25} />
+                </span>
+              </div>
 
-                <div className="flex  rounded-2xl">
-                  <span className="w-full px-6 py-4 border rounded-2xl bg-slate-50 line-through select-none font-bold">
-                    {randomWord}
-                  </span>
-                </div>
+              <div className={styles.input_group}>
+                <textarea
+                  placeholder={t("Message")}
+                  className={styles.input_text}
+                  {...formik.getFieldProps("message")}
+                />
+                <span className="icon flex items-center sm:px-4 px-2">
+                  <TbMessage2 size={25} />
+                </span>
               </div>
 
               {/* confirm button */}

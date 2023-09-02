@@ -1,3 +1,4 @@
+import CustomContactButton from "./CustomContactButton";
 import CustomEmailButton from "./CustomEmailButton";
 import CustomFAQButton from "./CustomFAQButton";
 import CustomGuideButton from "./CustomGuideButton";
@@ -14,6 +15,7 @@ export {
   CustomGuideButton,
   CustomLegalNoticeButton,
   CustomUniversitiesButton,
+  CustomContactButton,
   Navbar,
   Footer,
 };

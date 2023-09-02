@@ -10,6 +10,7 @@ import { fadeIn } from "@/utils/motions";
 import { dashboardItems } from "@/constants";
 import { SiMicrosoftoffice } from "react-icons/si";
 import {
+  CustomContactButton,
   CustomEmailButton,
   CustomFAQButton,
   CustomGuideButton,
@@ -36,21 +37,38 @@ export default function Page() {
         }
       >
         {/* Header */}
-        <div className="flex flex-col gap-4 py-2">
-          <h1 className="text-gray-700 md:text-3xl text-lg font-semibold">
-            {t("Fullname: ")}{" "}
-            <span className="font-bold text-gray-800 truncate">
-              {" "}
-              {t("Username")}
-            </span>
-          </h1>
-          <h1 className="text-gray-700 md:text-3xl text-lg font-semibold">
-            {t("University: ")}
-            <span className="font-bold text-gray-800">
-              {t("User University")}{" "}
-            </span>
-          </h1>
+        <div className="w-full flex lg:flex-row flex-col justify-between lg:items-start items-center gap-8">
+          <div className="flex flex-col gap-4 py-2 text-start">
+            <h1 className="text-gray-700 md:text-3xl text-lg font-semibold">
+              {t("Fullname: ")}{" "}
+              <span className="font-bold text-gray-800 truncate">
+                {" "}
+                {t("Username")}
+              </span>
+            </h1>
+            <h1 className="text-gray-700 md:text-3xl text-lg font-semibold">
+              {t("University: ")}
+              <span className="font-bold text-gray-800">
+                {t("User University")}{" "}
+              </span>
+            </h1>
+          </div>
+          <Link
+            href="login"
+            className={styles.button_logout_custom}
+            onClick={() => toast.success(t("Logout Successful"))}
+          >
+            <Image
+              src={"/assets/logout.png"}
+              alt="logout"
+              width={24}
+              height={24}
+              className="object-contain"
+            ></Image>
+            <p className="">{t("Logout")}</p>
+          </Link>
         </div>
+
         {/* Content */}
         <div className="md:w-full w-full grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-5">
           {dashboardItems.map((item, index) => (
@@ -77,28 +95,13 @@ export default function Page() {
           </Link>
         </div>
 
-        {/* Footer */}
         <div className="w-full grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1  gap-5">
+          <CustomContactButton />
           <CustomLegalNoticeButton />
           <CustomFAQButton />
           <CustomGuideButton />
           <CustomEmailButton />
           <CustomPhoneButton />
-
-          <Link
-            href="login"
-            className={styles.button_custom}
-            onClick={() => toast.success(t("Logout Successful"))}
-          >
-            <Image
-              src={"/assets/logout.png"}
-              alt="logout"
-              width={24}
-              height={24}
-              className="object-contain"
-            ></Image>
-            <p className="flex-grow">{t("Logout")}</p>
-          </Link>
         </div>
       </section>
     </motion.div>

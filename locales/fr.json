@@ -15,7 +15,7 @@
   "Mobile Phone Number": "Numéro de Téléphone Mobile",
   "I accept": "J'accepte",
   "The privacy terms": "Les termes de confidentialité",
-  "Logout": "Se Déconnecter",
+  "Logout": "Déconnexion",
   "Website Navigation": "Navigation sur le Site Web",
   "Website Navigation Paragraph": "Bienvenue dans la nouvelle expérience d'Inscription.tn ! Parcourez facilement votre parcours éducatif grâce à notre page d'accueil modernisée. Accédez à votre compte, inscrivez-vous à des cours et explorez votre tableau de bord personnalisé, le tout en un seul endroit.",
   "Dashboard Page": "Tableau de Bord",
@@ -51,8 +51,20 @@
   "Login Successful": "Connexion Réussie",
   "Register Successful": "Inscription Réussie: Veuillez vérifier votre email, nous avons envoyé un mot de passe à votre adresse",    
   "Logout Successful": "Déconnexion Réussie",
-
   "Forget PWD Successful": "Votre nouveau mot de passe a été envoyé à votre adresse Email." ,   
-  "Forget PWD Paragraph": "Pour regénérer un nouveau mot de passe pour votre compte sur inscription.tn, veuillez remplir le formulaire ci-dessous. Vous receverez un email de confirmation contenant votre nouveau mot de passe. Veuillez utiliser votre numéro de carte d'identité nationale (CIN) ou, pour les étudiants étrangers, l'Identifiant DGCI délivré par la Direction Générale de la Coopération Internationale du MESRS. ATTENTION : Votre compte est stritement personnel, vous devez garder votre mot de passe confidentiel."
+  "Forget PWD Paragraph": "Pour regénérer un nouveau mot de passe pour votre compte sur inscription.tn, veuillez remplir le formulaire ci-dessous. Vous receverez un email de confirmation contenant votre nouveau mot de passe. Veuillez utiliser votre numéro de carte d'identité nationale (CIN) ou, pour les étudiants étrangers, l'Identifiant DGCI délivré par la Direction Générale de la Coopération Internationale du MESRS. ATTENTION : Votre compte est stritement personnel, vous devez garder votre mot de passe confidentiel.",
+
+  "Contact Page": "Contactez Nous",
+  "Fullname":"Nom & Prénom",
+  "Subject": "Sujet",
+  "Message": "Votre Message",
+  "Fullname Required": "Nom & Prénom requis",
+  "Fullname must greater than 5 characters": "Le nom complet doit comporter au moins 5 caractères",
+  "Subject Required": "Sujet requis",
+  "Subject must greater than 5 characters": "Le sujet doit comporter au moins 5 caractères",
+  "Message Required": "Message requis",
+  "Message must greater than 8 characters": "Le message doit comporter au moins 8 caractères",
+  "Message Recieved" : "Message Envoyé : Merci ! Nous répondrons bientôt"
+
 
 }

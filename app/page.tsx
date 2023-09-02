@@ -6,6 +6,7 @@ import { useTranslation } from "react-i18next";
 import { motion } from "framer-motion";
 import { fadeIn } from "@/utils/motions";
 import {
+  CustomContactButton,
   CustomEmailButton,
   CustomFAQButton,
   CustomGuideButton,
@@ -84,6 +85,8 @@ export default function Home() {
             ></Image>
             <p className="flex-grow">{t("Forget your Password?")}</p>
           </Link>
+
+          <CustomContactButton />
           <CustomLegalNoticeButton />
           <CustomFAQButton />
           <CustomGuideButton />
