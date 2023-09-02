@@ -42,7 +42,7 @@
   "Phone Required": "رقم الهاتف مطلوب",
   "Invalid CIN": "رقم CIN أو هوية DGCI غير صالح",
   "Invalid Phone Number": "رقم الهاتف غير صالح",
-  "Invalid Email Address": "عنوان البريد الإلكتروني غير صالح",
+  "Invalid email address": "عنوان البريد الإلكتروني غير صالح",
   "Invalid Password": "كلمة المرور غير صالحة",
   "Must be greater than 8 and less than 20 characters long": "يجب أن تكون كلمة المرور أكبر من 8 وأقل من 20 حرفًا",
   "Must be 5 characters long": "يجب أن يكون رمز الأمان مكونًا من 5 أحرف",

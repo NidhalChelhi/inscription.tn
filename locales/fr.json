@@ -42,7 +42,7 @@
   "Phone Required": "Numéro de Téléphone Requis",
   "Invalid CIN": "Numéro CIN ou Identifiant DGCI Invalide",
   "Invalid Phone Number": "Numéro de Téléphone Invalide",
-  "Invalid Email Address": "Adresse E-mail Invalide",
+  "Invalid email address": "Adresse E-mail Invalide",
   "Invalid Password": "Mot de Passe Invalide",
   "Must be greater than 8 and less than 20 characters long": "Mot de passe doit contenir entre 8 et 20 caractères",
   "Must be 5 characters long": "Code de Sécurité doit contenir 5 caractères",
