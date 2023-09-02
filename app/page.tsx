@@ -54,7 +54,7 @@ export default function Home() {
             <p className="flex-grow">{t("Dashboard Page")}</p>
           </Link>
 
-          <Link href="login" className={styles.button_custom}>
+          <Link href="auth/login" className={styles.button_custom}>
             <Image
               src={"/assets/login.png"}
               alt="login"
@@ -65,7 +65,7 @@ export default function Home() {
             <p className="flex-grow">{t("Login Page")}</p>
           </Link>
 
-          <Link href="register" className={styles.button_custom}>
+          <Link href="auth/register" className={styles.button_custom}>
             <Image
               src={"/assets/register.png"}
               alt="register"
@@ -75,7 +75,7 @@ export default function Home() {
             ></Image>
             <p className="flex-grow">{t("Register Page")}</p>
           </Link>
-          <Link href="forgetpwd" className={styles.button_custom}>
+          <Link href="auth/forgetpwd" className={styles.button_custom}>
             <Image
               src={"/assets/forgetpwd.png"}
               alt="forgetpwd"

@@ -54,7 +54,7 @@ export default function Page() {
             </h1>
           </div>
           <Link
-            href="login"
+            href="auth/login"
             className={styles.button_logout_custom}
             onClick={() => toast.success(t("Logout Successful"))}
           >
