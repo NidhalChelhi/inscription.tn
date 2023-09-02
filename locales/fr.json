@@ -1,7 +1,7 @@
 {
   "Login": "Se Connecter",
-  "Login Paragraph": "Pour débuter votre inscription en ligne, veuillez vous identifier avec votre adresse e-mail et votre mot de passe.",
-  "Email": "Adresse E-mail",
+  "Login Paragraph": "Pour débuter votre inscription en ligne, veuillez vous identifier avec votre adresse Email et votre mot de passe.",
+  "Email": "Adresse Email",
   "Password": "Mot de Passe",
   "Security Code": "Code de Sécurité",
   "Confirm": "Confirmer",
@@ -9,7 +9,7 @@
   "Don't have an account yet?": "Vous n'avez pas encore de compte ?",
   "Create an account": "Créer un compte",
   "Register": "Inscription",
-  "Register Paragraph": "Pour créer votre compte sur inscription.tn, veuillez remplir le formulaire ci-dessous. Vous recevrez un e-mail d'activation ainsi que votre mot de passe par e-mail. Veuillez utiliser votre numéro de carte d'identité nationale (CIN) ou, pour les étudiants étrangers, l'identifiant DGCI délivré par la Direction Générale de la Coopération Internationale du MESRS.",
+  "Register Paragraph": "Pour créer votre compte sur inscription.tn, veuillez remplir le formulaire ci-dessous. Vous recevrez un Email d'activation ainsi que votre mot de passe par Email. Veuillez utiliser votre numéro de carte d'identité nationale (CIN) ou, pour les étudiants étrangers, l'identifiant DGCI délivré par la Direction Générale de la Coopération Internationale du MESRS.",
   "Already have an account?": "Vous avez déjà un compte ?",
   "CIN or DGCI": "CIN ou Identifiant DGCI",
   "Mobile Phone Number": "Numéro de Téléphone Mobile",
@@ -36,13 +36,13 @@
   "Change Password": "Changer le Mot de Passe",
   "Receipts": "Reçus",
   "Code Required": "Code de Sécurité Requis",
-  "Email Required": "Adresse E-mail Requise",
+  "Email Required": "Adresse Email Requise",
   "Password Required": "Mot de Passe Requis",
   "CIN Required": "Numéro CIN ou Identifiant DGCI Requis",
   "Phone Required": "Numéro de Téléphone Requis",
   "Invalid CIN": "Numéro CIN ou Identifiant DGCI Invalide",
   "Invalid Phone Number": "Numéro de Téléphone Invalide",
-  "Invalid email address": "Adresse E-mail Invalide",
+  "Invalid email address": "Adresse Email Invalide",
   "Invalid Password": "Mot de Passe Invalide",
   "Must be greater than 8 and less than 20 characters long": "Mot de passe doit contenir entre 8 et 20 caractères",
   "Must be 5 characters long": "Code de Sécurité doit contenir 5 caractères",
@@ -50,6 +50,9 @@
   "Please accept the privacy terms": "Veuillez accepter les termes de confidentialité",
   "Login Successful": "Connexion Réussie",
   "Register Successful": "Inscription Réussie: Veuillez vérifier votre email, nous avons envoyé un mot de passe à votre adresse",    
-  "Logout Successful": "Déconnexion Réussie"
+  "Logout Successful": "Déconnexion Réussie",
+
+  "Forget PWD Successful": "Votre nouveau mot de passe a été envoyé à votre adresse Email." ,   
+  "Forget PWD Paragraph": "Pour regénérer un nouveau mot de passe pour votre compte sur inscription.tn, veuillez remplir le formulaire ci-dessous. Vous receverez un email de confirmation contenant votre nouveau mot de passe. Veuillez utiliser votre numéro de carte d'identité nationale (CIN) ou, pour les étudiants étrangers, l'Identifiant DGCI délivré par la Direction Générale de la Coopération Internationale du MESRS. ATTENTION : Votre compte est stritement personnel, vous devez garder votre mot de passe confidentiel."
 
 }

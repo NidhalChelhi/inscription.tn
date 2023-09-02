@@ -74,6 +74,16 @@ export default function Home() {
             ></Image>
             <p className="flex-grow">{t("Register Page")}</p>
           </Link>
+          <Link href="forgetpwd" className={styles.button_custom}>
+            <Image
+              src={"/assets/forgetpwd.png"}
+              alt="forgetpwd"
+              width={24}
+              height={24}
+              className="object-contain"
+            ></Image>
+            <p className="flex-grow">{t("Forget your Password?")}</p>
+          </Link>
           <CustomLegalNoticeButton />
           <CustomFAQButton />
           <CustomGuideButton />
