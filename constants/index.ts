@@ -19,6 +19,12 @@ export const socials = [
 
 export const dashboardItems = [
   {
+    name: "Informations",
+    route: "dashboard",
+    image: "/assets/infos.png",
+  },
+
+  {
     name: "Payment",
     route: "dashboard",
     image: "/assets/payment.png",
@@ -28,16 +34,7 @@ export const dashboardItems = [
     route: "dashboard",
     image: "/assets/results.png",
   },
-  {
-    name: "Student Card",
-    route: "dashboard",
-    image: "/assets/card.png",
-  },
-  {
-    name: "Informations",
-    route: "dashboard",
-    image: "/assets/infos.png",
-  },
+
   {
     name: "Change Password",
     route: "dashboard",

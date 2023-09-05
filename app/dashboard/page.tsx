@@ -16,11 +16,46 @@ import {
   CustomGuideButton,
   CustomLegalNoticeButton,
   CustomPhoneButton,
+  StudentCard,
 } from "@/components";
 import { toast } from "react-toastify";
+import { useEffect, useState } from "react";
 
 export default function Page() {
   const { t, i18n } = useTranslation();
+  const [showModal, setShowModal] = useState(false);
+
+  const [small, setSmall] = useState(false);
+
+  const toggleModal = () => {
+    setShowModal(!showModal);
+  };
+
+  const downloadCard = () => {
+    // Replace 'YOUR_GOOGLE_DRIVE_IMAGE_URL' with the actual URL of the image on Google Drive
+    const imageDownloadLink =
+      "https://drive.google.com/file/d/1am89YKyMzMzilNyRXN0c6UTZW8Nz9fol/edit";
+
+    const anchor = document.createElement("a");
+    anchor.href = imageDownloadLink;
+    anchor.target = "_blank";
+    anchor.download = "student-card-image.png"; // Specify the desired file name
+
+    // Programmatically click the anchor link to trigger the download
+    anchor.click();
+  };
+
+  useEffect(() => {
+    const handleResize = () => {
+      const isSmall = window.innerWidth < 768;
+      setSmall(isSmall);
+    };
+    handleResize();
+    window.addEventListener("resize", handleResize);
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
 
   return (
     <motion.div
@@ -70,13 +105,13 @@ export default function Page() {
         </div>
 
         {/* Content */}
-        <div className="md:w-full w-full grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-5">
+        <div className="w-full grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-5">
           {dashboardItems.map((item, index) => (
             <Link key={index} href={item.route} className={styles.card_custom}>
               <div className="">
                 <img
                   src={item.image}
-                  alt="mail"
+                  alt="icon"
                   className="w-full h-[50px] object-cover"
                 ></img>
               </div>
@@ -84,7 +119,34 @@ export default function Page() {
               <p> {t(item.name)} </p>
             </Link>
           ))}
+          {small ? (
+            <div onClick={downloadCard} className={styles.card_custom}>
+              <div className="">
+                <img
+                  src="/assets/card.png"
+                  alt="student card"
+                  className="w-full h-[50px] object-cover"
+                ></img>
+              </div>
+
+              <p> {t("Student Card")} </p>
+            </div>
+          ) : (
+            <div onClick={toggleModal} className={styles.card_custom}>
+              <div className="">
+                <img
+                  src="/assets/card.png"
+                  alt="student card"
+                  className="w-full h-[50px] object-cover"
+                ></img>
+              </div>
+
+              <p> {t("Student Card")} </p>
+            </div>
+          )}
         </div>
+        {showModal && <StudentCard />}
+
         <div className="w-full">
           <Link href="dashboard" className={`${styles.card_custom_office}`}>
             <div className="flex justify-center items-center gap-2 ">

@@ -6,6 +6,7 @@ import CustomLegalNoticeButton from "./CustomLegalNoticeButton";
 import CustomPhoneButton from "./CustomPhoneButton";
 import CustomUniversitiesButton from "./CustomUniversitiesButton";
 import Footer from "./Footer";
+import StudentCard from "./StudentCard";
 import Navbar from "./Navbar";
 
 export {
@@ -16,6 +17,7 @@ export {
   CustomLegalNoticeButton,
   CustomUniversitiesButton,
   CustomContactButton,
+  StudentCard,
   Navbar,
   Footer,
 };
