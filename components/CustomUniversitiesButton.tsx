@@ -10,7 +10,7 @@ const CustomUniversitiesButton = () => {
   return (
     <Link
       href="http://www6.inscription.tn/images/stories/inscription/annuaire_fr.pdf"
-      download="annuaaaaaaaire_fr.pdf"
+      download="annuaire_fr.pdf"
       target="_blank"
       className={styles.button_custom}
     >

@@ -7,7 +7,7 @@ const CustomLegalNoticeButton = () => {
   const { t, i18n } = useTranslation();
 
   return (
-    <Link href="legalnotice" className={styles.button_custom}>
+    <Link href="/legalnotice" className={styles.button_custom}>
       <Image
         src={"/assets/legal.png"}
         alt="legal notice"

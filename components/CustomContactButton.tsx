@@ -8,7 +8,7 @@ const CustomContactButton = () => {
   const { t, i18n } = useTranslation();
 
   return (
-    <Link href="contact" className={styles.button_custom}>
+    <Link href="/contact" className={styles.button_custom}>
       <Image
         src={"/assets/contact.png"}
         alt="contact"

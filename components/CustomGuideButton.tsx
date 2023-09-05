@@ -7,7 +7,7 @@ const CustomGuideButton = () => {
   const { t, i18n } = useTranslation();
 
   return (
-    <Link href="guide" className={styles.button_custom}>
+    <Link href="/guide" className={styles.button_custom}>
       <Image
         src={"/assets/guide.png"}
         alt="guide"

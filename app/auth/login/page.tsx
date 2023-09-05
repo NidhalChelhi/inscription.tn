@@ -135,7 +135,7 @@ export default function Page() {
             </button>
           </div>
 
-          <Link className="text-blue-700 text-start" href="auth/forgetpwd">
+          <Link className="text-blue-700 text-start" href="forgetpwd">
             {t("Forget your Password?")}
           </Link>
           <CustomEmailButton />
@@ -145,7 +145,7 @@ export default function Page() {
         {/* bottom */}
         <p className="text-center text-gray-400 ">
           {t("Don't have an account yet?")}{" "}
-          <Link className="text-blue-700" href="auth/register">
+          <Link className="text-blue-700" href="register">
             {t("Create an account")}
           </Link>
         </p>

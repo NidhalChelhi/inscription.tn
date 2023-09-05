@@ -8,7 +8,7 @@ const CustomFAQButton = () => {
   const { t, i18n } = useTranslation();
 
   return (
-    <Link href="faq" className={styles.button_custom}>
+    <Link href="/faq" className={styles.button_custom}>
       <Image
         src={"/assets/faq.png"}
         alt="faq"

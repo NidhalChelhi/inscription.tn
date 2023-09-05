@@ -36,7 +36,7 @@ export default function Page() {
 
     if (Object.keys(validationErrors).length === 0) {
       toast.success(t("Forget PWD Successful", { autoClose: 7000 }));
-      router.push("/auth/login");
+      router.push("login");
     } else {
       const errorMessages = Object.keys(validationErrors).map((key) =>
         t(validationErrors[key as keyof typeof validationErrors])

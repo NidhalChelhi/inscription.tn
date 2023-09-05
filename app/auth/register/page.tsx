@@ -40,7 +40,7 @@ export default function Page() {
     if (Object.keys(validationErrors).length === 0 && isChecked) {
       // Step 3
       toast.success(t("Register Successful", { autoClose: 7000 }));
-      router.push("auth/login");
+      router.push("login");
     } else {
       const errorMessages = Object.keys(validationErrors).map((key) =>
         t(validationErrors[key as keyof typeof validationErrors])
@@ -154,7 +154,7 @@ export default function Page() {
           <span className="text-blue-700 text-start flex justify-start items-center gap-2">
             <label htmlFor="checkbox-1" className="cursor-pointer">
               {t("I accept")}{" "}
-              <Link href="legalnotice" className="underline">
+              <Link href="/legalnotice" className="underline">
                 {t("The privacy terms")}
               </Link>
             </label>
@@ -178,7 +178,7 @@ export default function Page() {
         {/* bottom */}
         <p className="text-center text-gray-400 ">
           {t("Already have an account?")}{" "}
-          <Link className="text-blue-700" href="auth/login">
+          <Link className="text-blue-700" href="login">
             {t("Login")}
           </Link>
         </p>
