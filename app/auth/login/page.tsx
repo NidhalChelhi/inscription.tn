@@ -102,7 +102,7 @@ export default function Page() {
               {...formik.getFieldProps("password")}
             />
             <span
-              className="icon flex items-center sm:px-4 px-2"
+              className="icon flex items-center sm:px-4 px-2 hover:text-blue-600 cursor-pointer"
               onClick={() => setShow(!show)}
             >
               <HiFingerPrint size={25} />

@@ -26,28 +26,39 @@ import { useEffect, useState } from "react";
 
 export default function Page() {
   const { t, i18n } = useTranslation();
+
   const [showCardModal, setShowCardModal] = useState(false);
   const [showPaymentModal, setShowPaymentModal] = useState(false);
-  const [showreceiptsModal, setShowReceiptsModal] = useState(false);
-
+  const [showReceiptsModal, setShowReceiptsModal] = useState(false);
   const [small, setSmall] = useState(false);
+
+  const scrollToModal = () => {
+    const modal = document.getElementById("modal");
+
+    if (modal) {
+      modal.scrollIntoView({ behavior: "smooth" });
+    }
+  };
 
   const toggleCardModal = () => {
     setShowPaymentModal(false);
     setShowReceiptsModal(false);
     setShowCardModal(!showCardModal);
+    scrollToModal();
   };
 
   const togglePaymentModal = () => {
     setShowCardModal(false);
     setShowReceiptsModal(false);
     setShowPaymentModal(!showPaymentModal);
+    scrollToModal();
   };
 
   const toggleReceiptsModal = () => {
     setShowCardModal(false);
     setShowPaymentModal(false);
-    setShowReceiptsModal(!showreceiptsModal);
+    setShowReceiptsModal(!showReceiptsModal);
+    scrollToModal();
   };
 
   useEffect(() => {
@@ -156,6 +167,7 @@ export default function Page() {
           </div>
 
           <div
+            id="modal"
             onClick={toggleReceiptsModal}
             className={`${styles.card_custom} cursor-pointer`}
           >
@@ -170,18 +182,19 @@ export default function Page() {
             <p className="select-none"> {t("Receipts")} </p>
           </div>
         </div>
-        {showCardModal ? (
-          small ? (
-            <StudentCardSMModal />
+        <div>
+          {showCardModal ? (
+            small ? (
+              <StudentCardSMModal />
+            ) : (
+              <StudentCardModal />
+            )
           ) : (
-            <StudentCardModal />
-          )
-        ) : (
-          <></>
-        )}
-        {showPaymentModal ? <PaymentInfosModal /> : <></>}
-        {showreceiptsModal ? <ReceiptsModal /> : <></>}
-
+            <></>
+          )}
+          {showPaymentModal ? <PaymentInfosModal /> : <></>}
+          {showReceiptsModal ? <ReceiptsModal /> : <></>}
+        </div>
         <div className="w-full">
           <Link href="dashboard" className={`${styles.card_custom_office}`}>
             <div className="flex justify-center items-center gap-2 ">

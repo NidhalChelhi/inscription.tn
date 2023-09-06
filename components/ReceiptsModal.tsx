@@ -56,7 +56,7 @@ const ReceiptsModal = () => {
           height={24}
           className="object-contain"
         ></Image>
-        <p className=""> {t("Print")}</p>
+        <p className="select-none"> {t("Print")}</p>
       </div>
     </motion.div>
   );

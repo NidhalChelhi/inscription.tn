@@ -74,7 +74,7 @@ const PaymentInfosModal = () => {
           height={24}
           className="object-contain"
         ></Image>
-        <p className=""> {t("Pay")}</p>
+        <p className="select-none"> {t("Pay")}</p>
       </div>
     </motion.div>
   );
