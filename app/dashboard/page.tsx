@@ -16,38 +16,43 @@ import {
   CustomGuideButton,
   CustomLegalNoticeButton,
   CustomPhoneButton,
-  StudentCard,
+  StudentCardModal,
+  StudentCardSMModal,
+  PaymentInfosModal,
+  ReceiptsModal,
 } from "@/components";
 import { toast } from "react-toastify";
 import { useEffect, useState } from "react";
 
 export default function Page() {
   const { t, i18n } = useTranslation();
-  const [showModal, setShowModal] = useState(false);
+  const [showCardModal, setShowCardModal] = useState(false);
+  const [showPaymentModal, setShowPaymentModal] = useState(false);
+  const [showreceiptsModal, setShowReceiptsModal] = useState(false);
 
   const [small, setSmall] = useState(false);
 
-  const toggleModal = () => {
-    setShowModal(!showModal);
+  const toggleCardModal = () => {
+    setShowPaymentModal(false);
+    setShowReceiptsModal(false);
+    setShowCardModal(!showCardModal);
   };
 
-  const downloadCard = () => {
-    // Replace 'YOUR_GOOGLE_DRIVE_IMAGE_URL' with the actual URL of the image on Google Drive
-    const imageDownloadLink =
-      "https://drive.google.com/file/d/1am89YKyMzMzilNyRXN0c6UTZW8Nz9fol/edit";
+  const togglePaymentModal = () => {
+    setShowCardModal(false);
+    setShowReceiptsModal(false);
+    setShowPaymentModal(!showPaymentModal);
+  };
 
-    const anchor = document.createElement("a");
-    anchor.href = imageDownloadLink;
-    anchor.target = "_blank";
-    anchor.download = "student-card-image.png"; // Specify the desired file name
-
-    // Programmatically click the anchor link to trigger the download
-    anchor.click();
+  const toggleReceiptsModal = () => {
+    setShowCardModal(false);
+    setShowPaymentModal(false);
+    setShowReceiptsModal(!showreceiptsModal);
   };
 
   useEffect(() => {
     const handleResize = () => {
-      const isSmall = window.innerWidth < 768;
+      const isSmall = window.innerWidth < 720;
       setSmall(isSmall);
     };
     handleResize();
@@ -63,7 +68,7 @@ export default function Page() {
       initial="hidden"
       whileInView="show"
       viewport={{ once: false, amount: 0.25 }}
-      className="m-auto bg-slate-50 rounded-3xl w-5/6 h-auto flex flex-col justify-center drop-shadow-2xl text-center py-10"
+      className="m-auto bg-slate-50 rounded-3xl w-5/6 h-auto flex flex-col justify-center drop-shadow-2xl text-center py-10 overflow-hidden"
     >
       <section
         className="w-3/4 mx-auto flex flex-col items-center justify-center gap-10"
@@ -119,41 +124,75 @@ export default function Page() {
               <p> {t(item.name)} </p>
             </Link>
           ))}
-          {small ? (
-            <div onClick={downloadCard} className={styles.card_custom}>
-              <div className="">
-                <img
-                  src="/assets/card.png"
-                  alt="student card"
-                  className="w-full h-[50px] object-cover"
-                ></img>
-              </div>
 
-              <p> {t("Student Card")} </p>
+          <div
+            onClick={togglePaymentModal}
+            className={`${styles.card_custom} cursor-pointer`}
+          >
+            <div className="">
+              <img
+                src="/assets/payment.png"
+                alt="student card"
+                className="w-full h-[50px] object-cover"
+              ></img>
             </div>
-          ) : (
-            <div onClick={toggleModal} className={styles.card_custom}>
-              <div className="">
-                <img
-                  src="/assets/card.png"
-                  alt="student card"
-                  className="w-full h-[50px] object-cover"
-                ></img>
-              </div>
 
-              <p> {t("Student Card")} </p>
+            <p className="select-none"> {t("Payment")} </p>
+          </div>
+
+          <div
+            onClick={toggleCardModal}
+            className={`${styles.card_custom} cursor-pointer`}
+          >
+            <div className="">
+              <img
+                src="/assets/card.png"
+                alt="student card"
+                className="w-full h-[50px] object-cover"
+              ></img>
             </div>
-          )}
+
+            <p className="select-none"> {t("Student Card")} </p>
+          </div>
+
+          <div
+            onClick={toggleReceiptsModal}
+            className={`${styles.card_custom} cursor-pointer`}
+          >
+            <div className="">
+              <img
+                src="/assets/recus.png"
+                alt="Receipts"
+                className="w-full h-[50px] object-cover"
+              ></img>
+            </div>
+
+            <p className="select-none"> {t("Receipts")} </p>
+          </div>
         </div>
-        {showModal && <StudentCard />}
+        {showCardModal ? (
+          small ? (
+            <StudentCardSMModal />
+          ) : (
+            <StudentCardModal />
+          )
+        ) : (
+          <></>
+        )}
+        {showPaymentModal ? <PaymentInfosModal /> : <></>}
+        {showreceiptsModal ? <ReceiptsModal /> : <></>}
 
         <div className="w-full">
           <Link href="dashboard" className={`${styles.card_custom_office}`}>
             <div className="flex justify-center items-center gap-2 ">
               <SiMicrosoftoffice size={50} />
-              <p className="text-2xl font-bold text-center">Office 365</p>
+              <p className="text-2xl font-bold text-center select-none">
+                Office 365
+              </p>
             </div>
-            <p className="text-center">INSPIRE, LEARN, COLLABORATE FOR FREE</p>
+            <p className="text-center select-none">
+              INSPIRE, LEARN, COLLABORATE FOR FREE
+            </p>
           </Link>
         </div>
 

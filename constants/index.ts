@@ -25,11 +25,6 @@ export const dashboardItems = [
   },
 
   {
-    name: "Payment",
-    route: "dashboard",
-    image: "/assets/payment.png",
-  },
-  {
     name: "Results",
     route: "dashboard",
     image: "/assets/results.png",
@@ -39,11 +34,6 @@ export const dashboardItems = [
     name: "Change Password",
     route: "dashboard",
     image: "/assets/pwd.png",
-  },
-  {
-    name: "Receipts",
-    route: "dashboard",
-    image: "/assets/recus.png",
   },
 ];
 

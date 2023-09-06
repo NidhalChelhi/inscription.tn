@@ -3,7 +3,7 @@
 import { fadeIn } from "@/utils/motions";
 import { motion } from "framer-motion";
 
-const StudentCard = () => {
+const StudentCardModal = () => {
   return (
     <motion.div
       variants={fadeIn("down", "spring", 0.1, 1)}
@@ -36,7 +36,7 @@ const StudentCard = () => {
         <div className="w-1/4  flex flex-col items-center justify-center gap-2">
           <div className="rounded-3xl overflow-hidden">
             <img
-              src="assets/nidhal_pfp.jpg"
+              src="assets/nidhal-pfp.jpeg"
               alt="Student Image"
               className="object-cover"
             />
@@ -67,4 +67,4 @@ const StudentCard = () => {
   );
 };
 
-export default StudentCard;
+export default StudentCardModal;
