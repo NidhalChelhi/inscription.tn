@@ -6,8 +6,6 @@ import Image from "next/image";
 import { useTranslation } from "react-i18next";
 import { motion } from "framer-motion";
 import { fadeIn } from "@/utils/motions";
-
-import { dashboardItems } from "@/constants";
 import { SiMicrosoftoffice } from "react-icons/si";
 import {
   CustomContactButton,
@@ -21,12 +19,15 @@ import {
   PaymentInfosModal,
   ReceiptsModal,
   ChangePasswordModal,
+  InfosModal,
 } from "@/components";
 import { toast } from "react-toastify";
 import { useEffect, useState } from "react";
 
 export default function Page() {
   const { t, i18n } = useTranslation();
+
+  const [showInfosModal, setShowInfosModal] = useState(false);
 
   const [showCardModal, setShowCardModal] = useState(false);
   const [showPaymentModal, setShowPaymentModal] = useState(false);
@@ -42,7 +43,17 @@ export default function Page() {
     }
   };
 
+  const toffleInfosModal = () => {
+    setShowCardModal(false);
+    setShowPaymentModal(false);
+    setShowReceiptsModal(false);
+    setShowChangePwdModal(false);
+    setShowInfosModal(!showInfosModal);
+    scrollToModal();
+  };
+
   const toggleCardModal = () => {
+    setShowInfosModal(false);
     setShowPaymentModal(false);
     setShowReceiptsModal(false);
     setShowChangePwdModal(false);
@@ -51,6 +62,7 @@ export default function Page() {
   };
 
   const togglePaymentModal = () => {
+    setShowInfosModal(false);
     setShowCardModal(false);
     setShowReceiptsModal(false);
     setShowChangePwdModal(false);
@@ -59,6 +71,7 @@ export default function Page() {
   };
 
   const toggleReceiptsModal = () => {
+    setShowInfosModal(false);
     setShowCardModal(false);
     setShowPaymentModal(false);
     setShowChangePwdModal(false);
@@ -67,6 +80,7 @@ export default function Page() {
   };
 
   const toggleChangePwdModal = () => {
+    setShowInfosModal(false);
     setShowCardModal(false);
     setShowPaymentModal(false);
     setShowReceiptsModal(false);
@@ -135,23 +149,22 @@ export default function Page() {
 
         {/* Content */}
         <div className="w-full grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-5">
-          {dashboardItems.map((item, index) => (
-            <Link
-              key={index}
-              href={item.route}
-              className={styles.dashboard_button}
-            >
-              <div>
-                <img
-                  src={item.image}
-                  alt="icon"
-                  className="w-full h-[50px] object-cover"
-                ></img>
-              </div>
-
-              <p> {t(item.name)} </p>
-            </Link>
-          ))}
+          {/* Informations Button */}
+          <div
+            onClick={toffleInfosModal}
+            className={`${showInfosModal ? "bg-indigo-100" : ""} ${
+              styles.dashboard_button
+            }`}
+          >
+            <div>
+              <img
+                src="/assets/infos.png"
+                alt="Student Card"
+                className="w-full h-[50px] object-cover"
+              ></img>
+            </div>
+            <p> {t("Informations")} </p>
+          </div>
 
           {/* Student Card Button */}
           <div
@@ -232,6 +245,9 @@ export default function Page() {
             </div>
             <p id="modal"> {t("Results")} (0) </p>
           </div>
+        </div>
+        <div className="w-full flex items-center justify-center">
+          {showInfosModal ? <InfosModal /> : <></>}
         </div>
         <div className="w-full lg:w-2/3 flex items-center justify-center">
           {showCardModal ? (

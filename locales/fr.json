@@ -104,5 +104,7 @@
   "Password Changed": "Mot de passe changé",
   "Payment Paragraph": "Veuillez vérifier vos informations avant de procéder au paiement.",
   "Receipts Paragraph": "Vous pouvez imprimer vos reçus à partir de cette liste",
-  "Change PWD Paragraph": "Pour changer votre mot de passe, veuillez renseigner le formulaire."
+  "Change PWD Paragraph": "Pour changer votre mot de passe, veuillez renseigner le formulaire.",
+  "Informations Paragraph": "Veuillez remplir soigneusement les champs de ce formulaire."
+
 }

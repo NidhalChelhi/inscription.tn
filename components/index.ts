@@ -6,6 +6,7 @@ import CustomLegalNoticeButton from "./CustomButtons/CustomLegalNoticeButton";
 import CustomPhoneButton from "./CustomButtons/CustomPhoneButton";
 import CustomUniversitiesButton from "./CustomButtons/CustomUniversitiesButton";
 
+import InfosModal from "./Modals/InfosModal";
 import StudentCardModal from "./Modals/StudentCardModal";
 import StudentCardSMModal from "./Modals/StudentCardSMModal";
 import PaymentInfosModal from "./Modals/PaymentInfosModal";
@@ -23,6 +24,7 @@ export {
   CustomLegalNoticeButton,
   CustomUniversitiesButton,
   CustomContactButton,
+  InfosModal,
   StudentCardModal,
   StudentCardSMModal,
   PaymentInfosModal,
