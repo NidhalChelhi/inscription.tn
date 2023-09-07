@@ -1,24 +1,24 @@
 "use client";
 import Link from "next/link";
-import styles from "../styles/Form.module.css";
+import styles from "../../styles/Buttons.module.css";
 import Image from "next/image";
 import { useTranslation } from "react-i18next";
 
-const CustomContactButton = () => {
+const CustomFAQButton = () => {
   const { t, i18n } = useTranslation();
 
   return (
-    <Link href="/contact" className={styles.button_custom}>
+    <Link href="/faq" className={styles.navigation_button}>
       <Image
-        src={"/assets/contact.png"}
-        alt="contact"
+        src={"/assets/faq.png"}
+        alt="faq"
         width={24}
         height={24}
         className="object-contain"
       ></Image>
-      <p className="flex-grow">{t("Contact Page")}</p>
+      <p className="flex-grow">{t("FAQ Page")}</p>
     </Link>
   );
 };
 
-export default CustomContactButton;
+export default CustomFAQButton;

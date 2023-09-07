@@ -1,6 +1,6 @@
 "use client";
 import Link from "next/link";
-import styles from "../../styles/Form.module.css";
+import styles from "../../styles/Buttons.module.css";
 import Image from "next/image";
 
 import { useTranslation } from "react-i18next";
@@ -36,10 +36,10 @@ export default function Page() {
   const [small, setSmall] = useState(false);
 
   const scrollToModal = () => {
-    // const modal = document.getElementById("modal");
-    // if (modal) {
-    //   modal.scrollIntoView({ behavior: "smooth" });
-    // }
+    const modal = document.getElementById("modal");
+    if (modal) {
+      modal.scrollIntoView({ behavior: "smooth" });
+    }
   };
 
   const toggleCardModal = () => {
@@ -119,7 +119,7 @@ export default function Page() {
           </div>
           <Link
             href="auth/login"
-            className={styles.button_logout_custom}
+            className={styles.logout_button}
             onClick={() => toast.success(t("Logout Successful"))}
           >
             <Image
@@ -129,15 +129,19 @@ export default function Page() {
               height={24}
               className="object-contain"
             ></Image>
-            <p className="">{t("Logout")}</p>
+            <p>{t("Logout")}</p>
           </Link>
         </div>
 
         {/* Content */}
         <div className="w-full grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-5">
           {dashboardItems.map((item, index) => (
-            <Link key={index} href={item.route} className={styles.card_custom}>
-              <div className="">
+            <Link
+              key={index}
+              href={item.route}
+              className={styles.dashboard_button}
+            >
+              <div>
                 <img
                   src={item.image}
                   alt="icon"
@@ -149,67 +153,73 @@ export default function Page() {
             </Link>
           ))}
 
-          <div
-            onClick={togglePaymentModal}
-            className={`${styles.card_custom} cursor-pointer`}
-          >
-            <div className="">
+          {/* Student Card Button */}
+          <div onClick={toggleCardModal} className={styles.dashboard_button}>
+            <div>
+              <img
+                src="/assets/card.png"
+                alt="Student Card"
+                className="w-full h-[50px] object-cover"
+              ></img>
+            </div>
+            <p> {t("Student Card")} </p>
+          </div>
+
+          {/* Payment Button */}
+          <div onClick={togglePaymentModal} className={styles.dashboard_button}>
+            <div>
               <img
                 src="/assets/payment.png"
                 alt="student card"
                 className="w-full h-[50px] object-cover"
               ></img>
             </div>
-
-            <p className="select-none"> {t("Payment")} </p>
+            <p> {t("Payment")} </p>
           </div>
 
-          <div
-            onClick={toggleCardModal}
-            className={`${styles.card_custom} cursor-pointer`}
-          >
-            <div className="">
-              <img
-                src="/assets/card.png"
-                alt="student card"
-                className="w-full h-[50px] object-cover"
-              ></img>
-            </div>
-
-            <p className="select-none"> {t("Student Card")} </p>
-          </div>
-
+          {/* Receipts Button */}
           <div
             onClick={toggleReceiptsModal}
-            className={`${styles.card_custom} cursor-pointer`}
+            className={styles.dashboard_button}
           >
-            <div className="">
+            <div>
               <img
                 src="/assets/recus.png"
                 alt="Receipts"
                 className="w-full h-[50px] object-cover"
               ></img>
             </div>
-
-            <p className="select-none"> {t("Receipts")} </p>
+            <p> {t("Receipts")} </p>
           </div>
 
+          {/* Change Password Button */}
           <div
             onClick={toggleChangePwdModal}
-            className={`${styles.card_custom} cursor-pointer`}
+            className={styles.dashboard_button}
           >
-            <div className="">
+            <div>
               <img
                 src="/assets/pwd.png"
                 alt="Change Password"
                 className="w-full h-[50px] object-cover"
               ></img>
             </div>
+            <p> {t("Change Password")} </p>
+          </div>
 
-            <p className="select-none"> {t("Change Password")} </p>
+          {/* Results Button */}
+          <div className={styles.dashboard_button_disabled}>
+            <div>
+              <img
+                src="/assets/results.png"
+                alt="Results"
+                className="w-full h-[50px] object-cover"
+              ></img>
+            </div>
+            <p id="modal"> {t("Results")} (0) </p>
           </div>
         </div>
-        <div id="modal" className="w-full flex items-center justify-center">
+        <div className="w-full lg:w-2/3 flex items-center justify-center">
           {showCardModal ? (
             small ? (
               <StudentCardSMModal />
@@ -227,7 +237,7 @@ export default function Page() {
           <Link
             href="https://www.microsoft.com/en-us/microsoft-365"
             target="_blank"
-            className={`${styles.card_custom_office}`}
+            className={`${styles.dashboard_button_office}`}
           >
             <div className="flex justify-center items-center gap-2 ">
               <SiMicrosoftoffice size={50} />

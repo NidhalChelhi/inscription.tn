@@ -1,17 +1,19 @@
-import CustomContactButton from "./CustomContactButton";
-import CustomEmailButton from "./CustomEmailButton";
-import CustomFAQButton from "./CustomFAQButton";
-import CustomGuideButton from "./CustomGuideButton";
-import CustomLegalNoticeButton from "./CustomLegalNoticeButton";
-import CustomPhoneButton from "./CustomPhoneButton";
-import CustomUniversitiesButton from "./CustomUniversitiesButton";
-import Footer from "./Footer";
-import StudentCardModal from "./StudentCardModal";
-import StudentCardSMModal from "./StudentCardSMModal";
-import PaymentInfosModal from "./PaymentInfosModal";
-import ReceiptsModal from "./ReceiptsModal";
+import CustomContactButton from "./CustomButtons/CustomContactButton";
+import CustomEmailButton from "./CustomButtons/CustomEmailButton";
+import CustomFAQButton from "./CustomButtons/CustomFAQButton";
+import CustomGuideButton from "./CustomButtons/CustomGuideButton";
+import CustomLegalNoticeButton from "./CustomButtons/CustomLegalNoticeButton";
+import CustomPhoneButton from "./CustomButtons/CustomPhoneButton";
+import CustomUniversitiesButton from "./CustomButtons/CustomUniversitiesButton";
+
+import StudentCardModal from "./Modals/StudentCardModal";
+import StudentCardSMModal from "./Modals/StudentCardSMModal";
+import PaymentInfosModal from "./Modals/PaymentInfosModal";
+import ReceiptsModal from "./Modals/ReceiptsModal";
+import ChangePasswordModal from "./Modals/ChangePasswordModal";
+
 import Navbar from "./Navbar";
-import ChangePasswordModal from "./ChangePasswordModal";
+import Footer from "./Footer";
 
 export {
   CustomEmailButton,

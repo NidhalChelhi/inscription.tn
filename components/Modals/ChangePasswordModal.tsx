@@ -3,7 +3,7 @@
 import { fadeIn } from "@/utils/motions";
 import { motion } from "framer-motion";
 import Image from "next/image";
-import styles from "../styles/Form.module.css";
+import styles from "../../styles/Buttons.module.css";
 import { useTranslation } from "react-i18next";
 import { toast } from "react-toastify";
 import { useFormik } from "formik";
@@ -41,7 +41,7 @@ const ChangePasswordModal = () => {
       initial="hidden"
       whileInView="show"
       viewport={{ once: false, amount: 0.25 }}
-      className="flex flex-col w-auto rounded-3xl bg-stone-50 border px-8 py-4 gap-8 items-center justify-center"
+      className=" w-full flex flex-col rounded-3xl bg-sky-100 px-8 py-4 gap-8 items-center justify-center"
     >
       {/* Title */}
       <div className="flex flex-col gap-2">
@@ -51,7 +51,10 @@ const ChangePasswordModal = () => {
         <p className="text-center text-gray-400">{t("Change PWD Paragraph")}</p>
       </div>
       {/* Content */}
-      <form className="flex flex-col gap-5" onSubmit={formik.handleSubmit}>
+      <form
+        className="flex flex-col gap-5 w-full"
+        onSubmit={formik.handleSubmit}
+      >
         <div className={styles.input_group}>
           <input
             type={`${show ? "text" : "password"}`}
@@ -83,7 +86,7 @@ const ChangePasswordModal = () => {
           />
         </div>
         <div className="w-full flex items-center justify-center">
-          <button className={`${styles.button_changepwd_custom}`} type="submit">
+          <button className={`${styles.changepwd_button}`} type="submit">
             <Image
               src={"/assets/pwd.png"}
               alt="print"

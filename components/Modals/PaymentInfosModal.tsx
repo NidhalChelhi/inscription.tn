@@ -3,7 +3,7 @@
 import { fadeIn } from "@/utils/motions";
 import { motion } from "framer-motion";
 import Image from "next/image";
-import styles from "../styles/Form.module.css";
+import styles from "../../styles/Buttons.module.css";
 import { useTranslation } from "react-i18next";
 import { toast } from "react-toastify";
 
@@ -16,7 +16,7 @@ const PaymentInfosModal = () => {
       initial="hidden"
       whileInView="show"
       viewport={{ once: false, amount: 0.25 }}
-      className="flex flex-col w-auto rounded-3xl bg-stone-50 border px-8 py-4 gap-8 items-center justify-center"
+      className="w-full flex flex-col rounded-3xl bg-rose-100 px-8 py-4 gap-8 items-center justify-center"
     >
       {/* Title */}
       <div className="flex flex-col gap-2">
@@ -62,7 +62,7 @@ const PaymentInfosModal = () => {
 
         <div className="w-full flex items-center justify-center">
           <div
-            className={styles.button_pay_custom}
+            className={styles.pay_button}
             onClick={() => toast.success(t("Payment Successful"))}
           >
             <Image

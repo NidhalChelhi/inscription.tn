@@ -4,12 +4,6 @@ export const dashboardItems = [
     route: "dashboard",
     image: "/assets/infos.png",
   },
-
-  {
-    name: "Results",
-    route: "dashboard",
-    image: "/assets/results.png",
-  },
 ];
 
 export const legalNotice = [

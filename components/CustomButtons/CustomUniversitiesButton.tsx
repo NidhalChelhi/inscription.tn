@@ -1,6 +1,6 @@
 "use client";
 import Link from "next/link";
-import styles from "../styles/Form.module.css";
+import styles from "../../styles/Buttons.module.css";
 import Image from "next/image";
 import { useTranslation } from "react-i18next";
 
@@ -12,7 +12,7 @@ const CustomUniversitiesButton = () => {
       href="http://www6.inscription.tn/images/stories/inscription/annuaire_fr.pdf"
       download="annuaire_fr.pdf"
       target="_blank"
-      className={styles.button_custom}
+      className={styles.navigation_button}
     >
       <Image
         src={"/assets/university.png"}

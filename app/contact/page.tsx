@@ -1,5 +1,5 @@
 "use client";
-import styles from "../../styles/Form.module.css";
+import styles from "../../styles/Buttons.module.css";
 import { HiOutlineUser, HiAtSymbol } from "react-icons/hi";
 import { TbMessage2 } from "react-icons/tb";
 import { LuMailQuestion } from "react-icons/lu";
@@ -122,7 +122,7 @@ export default function Page() {
 
           {/* confirm button */}
           <div className="input-button">
-            <button type="submit" className={styles.button}>
+            <button type="submit" className={styles.confirm_button}>
               {t("Confirm")}
             </button>
           </div>

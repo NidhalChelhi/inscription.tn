@@ -1,6 +1,6 @@
 "use client";
 import Link from "next/link";
-import styles from "../../../styles/Form.module.css";
+import styles from "../../../styles/Buttons.module.css";
 import { HiAtSymbol, HiFingerPrint, HiOutlineQrcode } from "react-icons/hi";
 import { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
@@ -130,7 +130,7 @@ export default function Page() {
 
           {/* login buttons */}
           <div className="input-button">
-            <button type="submit" className={styles.button}>
+            <button type="submit" className={styles.confirm_button}>
               {t("Confirm")}
             </button>
           </div>

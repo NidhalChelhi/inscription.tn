@@ -1,6 +1,6 @@
 "use client";
 import Link from "next/link";
-import styles from "../../../styles/Form.module.css";
+import styles from "../../../styles/Buttons.module.css";
 import {
   HiOutlineUser,
   HiAtSymbol,
@@ -167,7 +167,7 @@ export default function Page() {
           </span>
           {/* register buttons */}
           <div className="input-button">
-            <button type="submit" className={styles.button}>
+            <button type="submit" className={styles.confirm_button}>
               {t("Confirm")}
             </button>
           </div>

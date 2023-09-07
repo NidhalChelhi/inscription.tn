@@ -1,6 +1,6 @@
 "use client";
 import Link from "next/link";
-import styles from "../styles/Form.module.css";
+import styles from "../styles/Buttons.module.css";
 import Image from "next/image";
 import { useTranslation } from "react-i18next";
 import { motion } from "framer-motion";
@@ -42,7 +42,7 @@ export default function Home() {
         </div>
 
         <div className="w-full grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-5">
-          <Link href="dashboard" className={styles.button_custom}>
+          <Link href="dashboard" className={styles.navigation_button}>
             <Image
               src={"/assets/dashboard.png"}
               alt="dashboard"
@@ -54,7 +54,7 @@ export default function Home() {
             <p className="flex-grow">{t("Dashboard Page")}</p>
           </Link>
 
-          <Link href="auth/login" className={styles.button_custom}>
+          <Link href="auth/login" className={styles.navigation_button}>
             <Image
               src={"/assets/login.png"}
               alt="login"
@@ -65,7 +65,7 @@ export default function Home() {
             <p className="flex-grow">{t("Login Page")}</p>
           </Link>
 
-          <Link href="auth/register" className={styles.button_custom}>
+          <Link href="auth/register" className={styles.navigation_button}>
             <Image
               src={"/assets/register.png"}
               alt="register"
@@ -75,7 +75,7 @@ export default function Home() {
             ></Image>
             <p className="flex-grow">{t("Register Page")}</p>
           </Link>
-          <Link href="auth/forgetpwd" className={styles.button_custom}>
+          <Link href="auth/forgetpwd" className={styles.navigation_button}>
             <Image
               src={"/assets/forgetpwd.png"}
               alt="forgetpwd"

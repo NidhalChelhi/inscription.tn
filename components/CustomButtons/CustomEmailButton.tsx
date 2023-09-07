@@ -1,11 +1,14 @@
 "use client";
 import Link from "next/link";
-import styles from "../styles/Form.module.css";
+import styles from "../../styles/Buttons.module.css";
 import Image from "next/image";
 
 const CustomEmailButton = () => {
   return (
-    <Link href="mailto:inscription@mesrs.tn" className={styles.button_custom}>
+    <Link
+      href="mailto:inscription@mesrs.tn"
+      className={styles.navigation_button}
+    >
       <Image
         src={"/assets/email.png"}
         alt="mail"

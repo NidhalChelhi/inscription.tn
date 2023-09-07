@@ -1,5 +1,5 @@
 "use client";
-import styles from "../../../styles/Form.module.css";
+import styles from "../../../styles/Buttons.module.css";
 import { HiOutlineUser, HiAtSymbol, HiOutlineQrcode } from "react-icons/hi";
 import { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
@@ -134,7 +134,7 @@ export default function Page() {
 
           {/* confirm button */}
           <div className="input-button">
-            <button type="submit" className={styles.button}>
+            <button type="submit" className={styles.confirm_button}>
               {t("Confirm")}
             </button>
           </div>
