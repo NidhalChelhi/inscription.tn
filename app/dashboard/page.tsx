@@ -154,7 +154,12 @@ export default function Page() {
           ))}
 
           {/* Student Card Button */}
-          <div onClick={toggleCardModal} className={styles.dashboard_button}>
+          <div
+            onClick={toggleCardModal}
+            className={`${showCardModal ? "bg-indigo-100" : ""} ${
+              styles.dashboard_button
+            }`}
+          >
             <div>
               <img
                 src="/assets/card.png"
@@ -166,7 +171,12 @@ export default function Page() {
           </div>
 
           {/* Payment Button */}
-          <div onClick={togglePaymentModal} className={styles.dashboard_button}>
+          <div
+            onClick={togglePaymentModal}
+            className={`${showPaymentModal ? "bg-indigo-100" : ""} ${
+              styles.dashboard_button
+            }`}
+          >
             <div>
               <img
                 src="/assets/payment.png"
@@ -180,7 +190,9 @@ export default function Page() {
           {/* Receipts Button */}
           <div
             onClick={toggleReceiptsModal}
-            className={styles.dashboard_button}
+            className={`${showReceiptsModal ? "bg-indigo-100" : ""} ${
+              styles.dashboard_button
+            }`}
           >
             <div>
               <img
@@ -195,7 +207,9 @@ export default function Page() {
           {/* Change Password Button */}
           <div
             onClick={toggleChangePwdModal}
-            className={styles.dashboard_button}
+            className={`${showChangePwdModal ? "bg-indigo-100" : ""} ${
+              styles.dashboard_button
+            }`}
           >
             <div>
               <img

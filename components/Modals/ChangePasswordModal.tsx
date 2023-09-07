@@ -41,14 +41,14 @@ const ChangePasswordModal = () => {
       initial="hidden"
       whileInView="show"
       viewport={{ once: false, amount: 0.25 }}
-      className=" w-full flex flex-col rounded-3xl bg-purple-100 px-8 py-4 gap-8 items-center justify-center"
+      className=" w-full flex flex-col rounded-3xl border-2 px-8 py-4 gap-8 items-center justify-center"
     >
       {/* Title */}
       <div className="flex flex-col gap-2">
         <h1 className="text-gray-800 text-2xl font-bold">
           {t("Change Password")}
         </h1>
-        <p className="text-center text-gray-400">{t("Change PWD Paragraph")}</p>
+        <p className="text-center text-gray-600">{t("Change PWD Paragraph")}</p>
       </div>
       {/* Content */}
       <form

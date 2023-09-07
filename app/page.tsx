@@ -90,9 +90,9 @@ export default function Home() {
           <CustomLegalNoticeButton />
           <CustomFAQButton />
           <CustomGuideButton />
+          <CustomUniversitiesButton />
           <CustomEmailButton />
           <CustomPhoneButton />
-          <CustomUniversitiesButton />
         </div>
 
         <p className="text-center text-gray-400 ">

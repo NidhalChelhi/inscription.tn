@@ -10,17 +10,17 @@
 
 /* AUTH CONFIRM BUTTON */
 .confirm_button {
-  @apply cursor-pointer select-none w-full rounded-2xl py-4 px-8 text-lg bg-blue-600 text-white hover:bg-blue-200 hover:text-blue-700 hover:scale-105 transition-all duration-300 ease-in-out;
+  @apply cursor-pointer select-none w-full rounded-2xl py-4 px-8 text-lg bg-blue-500 text-white hover:bg-blue-200 hover:text-blue-600 hover:scale-105 transition-all duration-300 ease-in-out;
 }
 
 /* HOME PAGE NAVIGATION BUTTON */
 .navigation_button {
-  @apply cursor-pointer select-none w-full flex sm:flex-row flex-col items-center justify-center rounded-2xl py-4 px-8 border gap-2 hover:bg-sky-200 hover:scale-105 transition-all duration-300 ease-in-out;
+  @apply cursor-pointer select-none w-full flex sm:flex-row flex-col items-center justify-center rounded-2xl py-4 px-8 border gap-2 hover:bg-indigo-200 hover:scale-105 transition-all duration-300 ease-in-out;
 }
 
 /* DASHBOARD BUTTON */
 .dashboard_button {
-  @apply cursor-pointer select-none w-full flex flex-col justify-center items-center rounded-2xl px-8 py-4 gap-2 border hover:bg-sky-200 hover:scale-105 transition-all duration-300 ease-in-out;
+  @apply cursor-pointer select-none w-full flex flex-col justify-center items-center rounded-2xl px-8 py-4 gap-2 border hover:bg-indigo-200 hover:scale-105 transition-all duration-300 ease-in-out;
 }
 /* DASHBOARD BUTTON DISABLED */
 .dashboard_button_disabled {
@@ -38,17 +38,17 @@
 
 /* PAY BUTTON */
 .pay_button {
-  @apply cursor-pointer select-none w-auto flex flex-row justify-center items-center rounded-2xl px-8 py-4 gap-2 bg-rose-600  text-white hover:bg-rose-200  hover:text-rose-700   hover:scale-105 transition-all duration-300 ease-in-out;
+  @apply cursor-pointer select-none w-auto flex flex-row justify-center items-center rounded-2xl px-8 py-4 gap-2 bg-indigo-600  text-white hover:bg-indigo-200  hover:text-indigo-700   hover:scale-105 transition-all duration-300 ease-in-out;
 }
 
 /* PRINT BUTTON */
 .print_button {
-  @apply cursor-pointer select-none w-auto flex flex-row justify-center items-center rounded-2xl px-8 py-4 gap-2 bg-green-600 text-white hover:bg-green-200 hover:text-green-700  hover:scale-105 transition-all duration-300 ease-in-out;
+  @apply cursor-pointer select-none w-auto flex flex-row justify-center items-center rounded-2xl px-8 py-4 gap-2 bg-indigo-600 text-white hover:bg-indigo-200 hover:text-indigo-700  hover:scale-105 transition-all duration-300 ease-in-out;
 }
 
 /* CHANGE PWD BUTTON */
 .changepwd_button {
-  @apply cursor-pointer select-none w-auto flex flex-row justify-center items-center rounded-2xl px-8 py-4 gap-2 bg-purple-600 text-white hover:bg-purple-200 hover:text-purple-700  hover:scale-105 transition-all duration-300 ease-in-out;
+  @apply cursor-pointer select-none w-auto flex flex-row justify-center items-center rounded-2xl px-8 py-4 gap-2 bg-indigo-600 text-white hover:bg-indigo-200 hover:text-indigo-700  hover:scale-105 transition-all duration-300 ease-in-out;
 }
 
 .input_text + * {

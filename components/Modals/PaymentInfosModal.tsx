@@ -16,12 +16,12 @@ const PaymentInfosModal = () => {
       initial="hidden"
       whileInView="show"
       viewport={{ once: false, amount: 0.25 }}
-      className="w-full flex flex-col rounded-3xl bg-rose-100 px-8 py-4 gap-8 items-center justify-center"
+      className="w-full flex flex-col rounded-3xl border-2 px-8 py-4 gap-8 items-center justify-center"
     >
       {/* Title */}
       <div className="flex flex-col gap-2">
         <h1 className="text-gray-800 text-2xl font-bold">{t("Payment")}</h1>
-        <p className="text-center text-gray-400">{t("Payment Paragraph")}</p>
+        <p className="text-center text-gray-600">{t("Payment Paragraph")}</p>
       </div>
       {/* Content */}
       <div className="flex flex-col gap-5">
