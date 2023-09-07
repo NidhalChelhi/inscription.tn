@@ -41,7 +41,7 @@ const ChangePasswordModal = () => {
       initial="hidden"
       whileInView="show"
       viewport={{ once: false, amount: 0.25 }}
-      className=" w-full flex flex-col rounded-3xl bg-sky-100 px-8 py-4 gap-8 items-center justify-center"
+      className=" w-full flex flex-col rounded-3xl bg-purple-100 px-8 py-4 gap-8 items-center justify-center"
     >
       {/* Title */}
       <div className="flex flex-col gap-2">
