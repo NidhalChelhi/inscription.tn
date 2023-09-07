@@ -17,9 +17,15 @@ const ReceiptsModal = () => {
       initial="hidden"
       whileInView="show"
       viewport={{ once: false, amount: 0.25 }}
-      className="flex lg:flex-row flex-col w-full rounded-3xl bg-green-50 px-8 py-4 gap-4 items-center justify-between"
+      className="flex flex-col w-auto rounded-3xl bg-stone-50 border px-8 py-4 gap-8 items-center justify-center"
     >
-      <div className="flex flex-col lg:items-start lg:justify-start items-center justify-center gap-2 lg:text-start text-center ">
+      {/* Title */}
+      <div className="flex flex-col gap-2">
+        <h1 className="text-gray-800 text-2xl font-bold">{t("Receipts")}</h1>
+        <p className="text-center text-gray-400">{t("Receipts Paragraph")}</p>
+      </div>
+      {/* Content */}
+      <div className="flex flex-col gap-5">
         <h1>
           <span className="font-semibold">{t("Payment_Type: ")}</span>
           {t("Payment_Type")}
@@ -31,10 +37,7 @@ const ReceiptsModal = () => {
         <h1>
           <span className="font-semibold">{t("M_Payed: ")}</span>
           {t("M_Payed")}
-        </h1>
-      </div>
-
-      <div className="flex flex-col lg:items-start lg:justify-start items-center justify-center gap-2 lg:text-start text-center ">
+        </h1>{" "}
         <h1>
           <span className="font-semibold">{t("Date: ")}</span>
           {t("Date")}
@@ -43,20 +46,21 @@ const ReceiptsModal = () => {
           <span className="font-semibold">{t("Ref: ")}</span>
           {t("Ref")}
         </h1>
-      </div>
-
-      <div
-        className={styles.button_print_custom}
-        onClick={() => toast.success(t("Print Successful"))}
-      >
-        <Image
-          src={"/assets/receipt.png"}
-          alt="print"
-          width={24}
-          height={24}
-          className="object-contain"
-        ></Image>
-        <p className="select-none"> {t("Print")}</p>
+        <div className="w-full flex items-center justify-center">
+          <div
+            className={styles.button_print_custom}
+            onClick={() => toast.success(t("Print Successful"))}
+          >
+            <Image
+              src={"/assets/receipt.png"}
+              alt="print"
+              width={24}
+              height={24}
+              className="object-contain"
+            ></Image>
+            <p className="select-none"> {t("Print")}</p>
+          </div>
+        </div>
       </div>
     </motion.div>
   );

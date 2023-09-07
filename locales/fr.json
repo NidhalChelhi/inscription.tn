@@ -83,7 +83,6 @@
   "Stu_card": "2DT",
   "Paiement": "payée",
   "Pay": "Payer",
-
   "Payment_Type: ": "Objet: ",
   "Speciality: ": "Spécialité: ",
   "M_Payed: ": "Montant payé: ",
@@ -95,7 +94,16 @@
   "Date": "30/08/2023 21:45:55",
   "Ref": "727056428324",
   "Print": "Imprimer",
-
   "Payment Successful": "Paiement Réussi",
-  "Print Successful": "Impression Réussie"
+  "Print Successful": "Impression Réussie",
+  "Change PWD Paragraph": " Pour changer votre mot de passe, veuillez renseigner le formulaire.",
+  "Actual Password": "Mot de passe actuel",
+  "New Password": "Nouveau mot de passe",
+  "Confirm New Password": "Confirmer le nouveau mot de passe",
+  "Field Required": "Champ Obligatoire",
+  "Passwords don't match": "Les mots de passe ne correspondent pas",
+  "Password Changed": "Mot de passe changé",
+
+  "Payment Paragraph": "Veuillez vérifier l'année universitaire et la tranche de paiement avant de procéder au paiement.",
+  "Receipts Paragraph": "Vous pouvez imprimer vos reçus à partir de cette liste"
 }

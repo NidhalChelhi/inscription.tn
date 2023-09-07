@@ -7,7 +7,7 @@ import { useTranslation } from "react-i18next";
 import { motion } from "framer-motion";
 import { fadeIn } from "@/utils/motions";
 import { useFormik } from "formik";
-import { contactValidate, forgetpwdValidate } from "../../lib/validate";
+import { contactValidate } from "../../lib/validate";
 
 import { toast } from "react-toastify";
 import { useRouter } from "next/navigation";

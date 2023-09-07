@@ -97,6 +97,14 @@
   "Print": "طباعة",
 
   "Payment Successful": "تم الدفع بنجاح",
-  "Print Successful": "تم تحميل الوصل بنجاح"
+  "Print Successful": "تم تحميل الوصل بنجاح",
+
+  "Change PWD Paragraph": "لتغيير كلمة المرور الخاصة بك، يرجى ملء النموذج.",
+  "Actual Password": "كلمة المرور الحالية",
+  "New Password": "كلمة المرور الجديدة",
+  "Confirm New Password": "تأكيد كلمة المرور الجديدة",
+  "Field Required": "حقل مطلوب",
+  "Passwords don't match": "كلمات المرور غير متطابقة",
+  "Password Changed": "تم تغيير كلمة المرور"
 
 }

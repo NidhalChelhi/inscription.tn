@@ -20,6 +20,7 @@ import {
   StudentCardSMModal,
   PaymentInfosModal,
   ReceiptsModal,
+  ChangePasswordModal,
 } from "@/components";
 import { toast } from "react-toastify";
 import { useEffect, useState } from "react";
@@ -30,19 +31,21 @@ export default function Page() {
   const [showCardModal, setShowCardModal] = useState(false);
   const [showPaymentModal, setShowPaymentModal] = useState(false);
   const [showReceiptsModal, setShowReceiptsModal] = useState(false);
+  const [showChangePwdModal, setShowChangePwdModal] = useState(false);
+
   const [small, setSmall] = useState(false);
 
   const scrollToModal = () => {
-    const modal = document.getElementById("modal");
-
-    if (modal) {
-      modal.scrollIntoView({ behavior: "smooth" });
-    }
+    // const modal = document.getElementById("modal");
+    // if (modal) {
+    //   modal.scrollIntoView({ behavior: "smooth" });
+    // }
   };
 
   const toggleCardModal = () => {
     setShowPaymentModal(false);
     setShowReceiptsModal(false);
+    setShowChangePwdModal(false);
     setShowCardModal(!showCardModal);
     scrollToModal();
   };
@@ -50,6 +53,7 @@ export default function Page() {
   const togglePaymentModal = () => {
     setShowCardModal(false);
     setShowReceiptsModal(false);
+    setShowChangePwdModal(false);
     setShowPaymentModal(!showPaymentModal);
     scrollToModal();
   };
@@ -57,7 +61,16 @@ export default function Page() {
   const toggleReceiptsModal = () => {
     setShowCardModal(false);
     setShowPaymentModal(false);
+    setShowChangePwdModal(false);
     setShowReceiptsModal(!showReceiptsModal);
+    scrollToModal();
+  };
+
+  const toggleChangePwdModal = () => {
+    setShowCardModal(false);
+    setShowPaymentModal(false);
+    setShowReceiptsModal(false);
+    setShowChangePwdModal(!showChangePwdModal);
     scrollToModal();
   };
 
@@ -167,7 +180,6 @@ export default function Page() {
           </div>
 
           <div
-            id="modal"
             onClick={toggleReceiptsModal}
             className={`${styles.card_custom} cursor-pointer`}
           >
@@ -181,8 +193,23 @@ export default function Page() {
 
             <p className="select-none"> {t("Receipts")} </p>
           </div>
+
+          <div
+            onClick={toggleChangePwdModal}
+            className={`${styles.card_custom} cursor-pointer`}
+          >
+            <div className="">
+              <img
+                src="/assets/pwd.png"
+                alt="Change Password"
+                className="w-full h-[50px] object-cover"
+              ></img>
+            </div>
+
+            <p className="select-none"> {t("Change Password")} </p>
+          </div>
         </div>
-        <div>
+        <div id="modal" className="w-full flex items-center justify-center">
           {showCardModal ? (
             small ? (
               <StudentCardSMModal />
@@ -194,9 +221,14 @@ export default function Page() {
           )}
           {showPaymentModal ? <PaymentInfosModal /> : <></>}
           {showReceiptsModal ? <ReceiptsModal /> : <></>}
+          {showChangePwdModal ? <ChangePasswordModal /> : <></>}
         </div>
         <div className="w-full">
-          <Link href="dashboard" className={`${styles.card_custom_office}`}>
+          <Link
+            href="https://www.microsoft.com/en-us/microsoft-365"
+            target="_blank"
+            className={`${styles.card_custom_office}`}
+          >
             <div className="flex justify-center items-center gap-2 ">
               <SiMicrosoftoffice size={50} />
               <p className="text-2xl font-bold text-center select-none">

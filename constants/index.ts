@@ -1,22 +1,3 @@
-export const socials = [
-  {
-    name: "twitter",
-    url: "/twitter.svg",
-  },
-  {
-    name: "linkedin",
-    url: "/linkedin.svg",
-  },
-  {
-    name: "instagram",
-    url: "/instagram.svg",
-  },
-  {
-    name: "facebook",
-    url: "/facebook.svg",
-  },
-];
-
 export const dashboardItems = [
   {
     name: "Informations",
@@ -28,12 +9,6 @@ export const dashboardItems = [
     name: "Results",
     route: "dashboard",
     image: "/assets/results.png",
-  },
-
-  {
-    name: "Change Password",
-    route: "dashboard",
-    image: "/assets/pwd.png",
   },
 ];
 

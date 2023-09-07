@@ -26,6 +26,9 @@
 .button_print_custom {
   @apply cursor-pointer bg-green-600 w-auto flex flex-row justify-center items-center rounded-2xl px-8 py-4 gap-2 text-white   hover:text-green-700 hover:bg-green-200 hover:scale-105 transition-all duration-300 ease-in-out;
 }
+.button_changepwd_custom {
+  @apply cursor-pointer bg-stone-600 w-auto flex flex-row justify-center items-center rounded-2xl px-8 py-4 gap-2 text-white   hover:text-stone-700 hover:bg-stone-200 hover:scale-105 transition-all duration-300 ease-in-out;
+}
 
 .card_custom {
   @apply cursor-pointer w-full flex justify-center items-center flex-col p-3 gap-2  rounded-2xl border hover:bg-gray-200 hover:scale-105 transition-all duration-300 ease-in-out;

@@ -11,6 +11,7 @@ import StudentCardSMModal from "./StudentCardSMModal";
 import PaymentInfosModal from "./PaymentInfosModal";
 import ReceiptsModal from "./ReceiptsModal";
 import Navbar from "./Navbar";
+import ChangePasswordModal from "./ChangePasswordModal";
 
 export {
   CustomEmailButton,
@@ -24,6 +25,7 @@ export {
   StudentCardSMModal,
   PaymentInfosModal,
   ReceiptsModal,
+  ChangePasswordModal,
   Navbar,
   Footer,
 };
