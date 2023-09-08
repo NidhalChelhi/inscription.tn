@@ -102,11 +102,11 @@ export default function Page() {
   }, []);
 
   return (
-    <motion.div
-      variants={fadeIn("left", "spring", 0.5, 1)}
-      initial="hidden"
-      whileInView="show"
-      viewport={{ once: false, amount: 0.25 }}
+    <div
+      // variants={fadeIn("left", "spring", 0.5, 1)}
+      // initial="hidden"
+      // whileInView="show"
+      // viewport={{ once: false, amount: 0.25 }}
       className="m-auto bg-slate-50 rounded-3xl w-5/6 h-auto flex flex-col justify-center drop-shadow-2xl text-center py-10 overflow-hidden"
     >
       <section
@@ -300,6 +300,6 @@ export default function Page() {
           </div>
         </div>
       </section>
-    </motion.div>
+    </div>
   );
 }
