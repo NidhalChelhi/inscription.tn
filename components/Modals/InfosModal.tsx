@@ -83,6 +83,7 @@ const InfosModal = () => {
             <CustomSelect options={militaryOptions} />
           </div>
         </div>
+
         <div className="flex flex-col gap-2">
           <p className="text-start font-semibold">
             Baccalauréat ou diplôme équivalent

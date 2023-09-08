@@ -22,8 +22,10 @@ const config: Config = {
         grey: "#747A88",
       },
       backgroundImage: {
-        "login-img": "url('/assets/login-bg.jpg')",
-        "register-img": "url('/assets/register-bg.jpg')",
+        "bg-img1": "url('/assets/univ1.jpg')",
+        "bg-img2": "url('/assets/univ2.jpg')",
+        "bg-img3": "url('/assets/univ3.jpg')",
+        "bg-img4": "url('/assets/univ3.jpg')",
       },
     },
   },

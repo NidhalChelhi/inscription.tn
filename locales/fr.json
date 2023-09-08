@@ -16,15 +16,13 @@
   "I accept": "J'accepte",
   "The privacy terms": "Les termes de confidentialité",
   "Logout": "Déconnexion",
-  "Website Navigation": "Navigation sur le Site Web",
-  "Website Navigation Paragraph": "Bienvenue dans la nouvelle expérience d'Inscription.tn ! Parcourez facilement votre parcours éducatif grâce à notre page d'accueil modernisée. Accédez à votre compte, inscrivez-vous à des cours et explorez votre tableau de bord personnalisé, le tout en un seul endroit.",
   "Dashboard Page": "Tableau de Bord",
   "Login Page": "Page de Connexion",
   "Register Page": "Page d'Inscription",
   "Legal Notice Page": "Mentions Légales",
   "Guide Page": "Guide",
   "FAQ Page": "FAQ",
-  "Download Universities List": "Télécharger la Liste des Universités",
+  "Download Universities List": "Liste des Universités",
   "Fullname: ": "Nom & Prénom: ",
   "University: ": "Établissement: ",
   "Username": "Nidhal Chelhi",
@@ -105,6 +103,9 @@
   "Payment Paragraph": "Veuillez vérifier vos informations avant de procéder au paiement.",
   "Receipts Paragraph": "Vous pouvez imprimer vos reçus à partir de cette liste",
   "Change PWD Paragraph": "Pour changer votre mot de passe, veuillez renseigner le formulaire.",
-  "Informations Paragraph": "Veuillez remplir soigneusement les champs de ce formulaire."
+  "Informations Paragraph": "Veuillez remplir soigneusement les champs de ce formulaire.",
 
+
+  "Home Page Welcome": "Bienvenue sur Inscription.tn",
+  "Home Page Paragraph": "Bienvenue dans la nouvelle expérience d'Inscription.tn ! Parcourez facilement votre parcours éducatif grâce à notre page d'accueil modernisée. Accédez à votre compte, inscrivez-vous à des cours et explorez votre tableau de bord personnalisé, le tout en un seul endroit."
 }

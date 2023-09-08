@@ -20,6 +20,7 @@ import {
   ReceiptsModal,
   ChangePasswordModal,
   InfosModal,
+  CustomUniversitiesButton,
 } from "@/components";
 import { toast } from "react-toastify";
 import { useEffect, useState } from "react";
@@ -246,10 +247,14 @@ export default function Page() {
             <p id="modal"> {t("Results")} (0) </p>
           </div>
         </div>
-        <div className="w-full flex items-center justify-center">
+
+        <div
+          className={`w-full ${
+            showInfosModal ? "w-full" : "lg:w-2/3"
+          }  flex justify-center items-center`}
+        >
           {showInfosModal ? <InfosModal /> : <></>}
-        </div>
-        <div className="w-full lg:w-2/3 flex items-center justify-center">
+
           {showCardModal ? (
             small ? (
               <StudentCardSMModal />
@@ -263,6 +268,7 @@ export default function Page() {
           {showReceiptsModal ? <ReceiptsModal /> : <></>}
           {showChangePwdModal ? <ChangePasswordModal /> : <></>}
         </div>
+
         <div className="w-full">
           <Link
             href="https://www.microsoft.com/en-us/microsoft-365"
@@ -280,14 +286,18 @@ export default function Page() {
             </p>
           </Link>
         </div>
-
-        <div className="w-full grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1  gap-5">
-          <CustomContactButton />
-          <CustomLegalNoticeButton />
-          <CustomFAQButton />
-          <CustomGuideButton />
-          <CustomEmailButton />
-          <CustomPhoneButton />
+        <div className="flex flex-col gap-5 w-full">
+          <div className="flex flex-col lg:flex-row gap-5 w-full  ">
+            <CustomLegalNoticeButton />
+            <CustomFAQButton />
+            <CustomGuideButton />
+            <CustomUniversitiesButton />
+          </div>
+          <div className="flex flex-col lg:flex-row gap-5 w-full  ">
+            <CustomContactButton />
+            <CustomEmailButton />
+            <CustomPhoneButton />
+          </div>
         </div>
       </section>
     </motion.div>

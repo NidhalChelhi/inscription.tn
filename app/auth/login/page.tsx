@@ -65,7 +65,7 @@ export default function Page() {
       className="m-auto bg-slate-50 rounded-3xl w-5/6 h-auto grid lg:grid-cols-2 drop-shadow-2xl"
     >
       <div className="w-full rounded-l-3xl relative overflow-hidden">
-        <div className="bg-login-img bg-cover absolute inset-0 bg-no-repeat z-10 w-full h-full bg-center"></div>
+        <div className="bg-bg-img2 bg-cover absolute inset-0 bg-no-repeat z-10 w-full h-full bg-center"></div>
       </div>
       <section
         className="w-3/4 mx-auto flex flex-col justify-center gap-10 text-center py-10"
