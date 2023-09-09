@@ -65,6 +65,16 @@ export default function Home() {
             ></Image>
             <p className="flex-grow">{t("Register Page")}</p>
           </Link>
+          <Link href="dashboard" className={styles.navigation_button}>
+            <Image
+              src={"/assets/dashboard.png"}
+              alt="dashboard"
+              width={24}
+              height={24}
+              className="object-contain"
+            ></Image>
+            <p className="flex-grow">{t("Dashboard Page")}</p>
+          </Link>
           <CustomContactButton />
         </div>
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-5 w-full">

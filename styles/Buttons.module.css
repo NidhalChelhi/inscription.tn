@@ -43,7 +43,7 @@
 
 /* Modal BUTTON */
 .modal_button_secondary {
-  @apply cursor-pointer select-none w-auto flex flex-row justify-center items-center rounded-2xl px-8 py-4 gap-2 bg-indigo-200  text-indigo-700 hover:bg-indigo-600  hover:text-white   hover:scale-105 transition-all duration-300 ease-in-out;
+  @apply cursor-pointer select-none w-auto flex flex-row justify-center items-center rounded-2xl px-8 py-4 gap-2  text-indigo-700  hover:scale-105 transition-all duration-300 ease-in-out;
 }
 
 .input_text + * {

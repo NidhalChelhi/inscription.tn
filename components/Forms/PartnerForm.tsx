@@ -1,5 +1,5 @@
 import React from "react";
-import { CustomInput, CustomSelect } from "../CustomInput";
+import { CustomInput } from "../CustomInput";
 import { useTranslation } from "react-i18next";
 
 const PartnerForm = ({ formik }: any) => {
