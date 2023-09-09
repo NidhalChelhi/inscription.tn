@@ -163,6 +163,13 @@
   "Pays parent": "Country",
   "Téléphone parent": "Phone Number",
 
+  "Information du conjoint": "Spouse Information",
+  "Nom du conjoint": "Spouse Name",
+  "Prénom du conjoint": "Spouse's First Name",
+  "Profession du conjoint": "Spouse's Profession",
+  "Etablissement partner": "Spouse's Institution",
+  "Nombre d'enfants": "Number of Children",
+
   "Vivant": "Alive",
   "Decede": "Deceased",
 

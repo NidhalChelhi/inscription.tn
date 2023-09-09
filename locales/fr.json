@@ -161,6 +161,13 @@
   "Pays parent": "Pays",
   "Téléphone parent": "Téléphone",
 
+  "Information du conjoint": "Information du conjoint",
+  "Nom du conjoint": "Nom du conjoint",
+  "Prénom du conjoint": "Prénom du conjoint",
+  "Profession du conjoint": "Profession du conjoint",
+  "Etablissement partner": "Etablissement du conjoint",
+  "Nombre d'enfants": "Nombre d'enfants",
+
 
   "Vivant" : "Vivant",
   "Decede" : "Décédé",
