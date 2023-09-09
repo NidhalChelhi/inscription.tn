@@ -26,7 +26,7 @@ export default function Page() {
         <div className="flex flex-col gap-12 py-2">
           <div className="flex flex-col gap-2">
             <h1 className="font-bold text-gray-800 md:text-4xl text-2xl">
-              Guide - Inscription en ligne
+              Mentions légales - Inscription en ligne
             </h1>
             <p className="w-auto mx-auto text-gray-400">
               Les mentions légales visent les conditions juridiques,
