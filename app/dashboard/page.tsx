@@ -2,10 +2,8 @@
 import Link from "next/link";
 import styles from "../../styles/Buttons.module.css";
 import Image from "next/image";
-
 import { useTranslation } from "react-i18next";
 import { motion } from "framer-motion";
-import { fadeIn } from "@/utils/motions";
 import { SiMicrosoftoffice } from "react-icons/si";
 import {
   CustomContactButton,
@@ -50,6 +48,9 @@ export default function Page() {
     setShowReceiptsModal(false);
     setShowChangePwdModal(false);
     setShowInfosModal(!showInfosModal);
+    if (!showInfosModal && small) {
+      scrollToModal();
+    }
   };
 
   const toggleCardModal = () => {
@@ -58,6 +59,9 @@ export default function Page() {
     setShowReceiptsModal(false);
     setShowChangePwdModal(false);
     setShowCardModal(!showCardModal);
+    if (!showCardModal && small) {
+      scrollToModal();
+    }
   };
 
   const togglePaymentModal = () => {
@@ -66,6 +70,9 @@ export default function Page() {
     setShowReceiptsModal(false);
     setShowChangePwdModal(false);
     setShowPaymentModal(!showPaymentModal);
+    if (!showPaymentModal && small) {
+      scrollToModal();
+    }
   };
 
   const toggleReceiptsModal = () => {
@@ -74,6 +81,9 @@ export default function Page() {
     setShowPaymentModal(false);
     setShowChangePwdModal(false);
     setShowReceiptsModal(!showReceiptsModal);
+    if (!showReceiptsModal && small) {
+      scrollToModal();
+    }
   };
 
   const toggleChangePwdModal = () => {
@@ -82,6 +92,9 @@ export default function Page() {
     setShowPaymentModal(false);
     setShowReceiptsModal(false);
     setShowChangePwdModal(!showChangePwdModal);
+    if (!showChangePwdModal && small) {
+      scrollToModal();
+    }
   };
 
   useEffect(() => {
@@ -97,12 +110,12 @@ export default function Page() {
   }, []);
 
   return (
-    <div
-      // variants={fadeIn("left", "spring", 0.5, 1)}
-      // initial="hidden"
-      // whileInView="show"
-      // viewport={{ once: false, amount: 0.25 }}
-      className="m-auto bg-slate-50 rounded-3xl w-full sm:w-5/6 h-auto flex flex-col justify-center drop-shadow-2xl text-center py-10 overflow-hidden"
+    <motion.div
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+      transition={{ duration: 0.3 }}
+      className="mx-2 sm:m-auto bg-slate-50 rounded-3xl w-full sm:w-5/6 h-auto flex flex-col justify-center drop-shadow-2xl text-center py-10 overflow-hidden"
     >
       <section
         className="sm:w-3/4 w-full px-2 mx-auto flex flex-col items-center justify-center gap-10"
@@ -248,29 +261,42 @@ export default function Page() {
             showInfosModal ? "w-full" : "lg:w-2/3"
           }  flex justify-center items-center`}
         >
-          {showInfosModal ? <InfosModal onClose={toggleInfosModal} /> : <></>}
+          {showInfosModal ? (
+            <InfosModal show={showInfosModal} onClose={toggleInfosModal} />
+          ) : (
+            <></>
+          )}
 
           {showCardModal ? (
             small ? (
-              <StudentCardSMModal />
+              <StudentCardSMModal show={showCardModal} />
             ) : (
-              <StudentCardModal />
+              <StudentCardModal show={showCardModal} />
             )
           ) : (
             <></>
           )}
           {showPaymentModal ? (
-            <PaymentInfosModal onClose={togglePaymentModal} />
+            <PaymentInfosModal
+              show={showPaymentModal}
+              onClose={togglePaymentModal}
+            />
           ) : (
             <></>
           )}
           {showReceiptsModal ? (
-            <ReceiptsModal onClose={toggleReceiptsModal} />
+            <ReceiptsModal
+              show={showReceiptsModal}
+              onClose={toggleReceiptsModal}
+            />
           ) : (
             <></>
           )}
           {showChangePwdModal ? (
-            <ChangePasswordModal onClose={toggleChangePwdModal} />
+            <ChangePasswordModal
+              show={showChangePwdModal}
+              onClose={toggleChangePwdModal}
+            />
           ) : (
             <></>
           )}
@@ -307,6 +333,6 @@ export default function Page() {
           </div>
         </div>
       </section>
-    </div>
+    </motion.div>
   );
 }

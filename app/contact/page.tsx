@@ -5,7 +5,6 @@ import { TbMessage2 } from "react-icons/tb";
 import { LuMailQuestion } from "react-icons/lu";
 import { useTranslation } from "react-i18next";
 import { motion } from "framer-motion";
-import { fadeIn } from "@/utils/motions";
 import { useFormik } from "formik";
 import { contactValidate } from "../../lib/validate";
 
@@ -49,11 +48,11 @@ export default function Page() {
 
   return (
     <motion.div
-      variants={fadeIn("left", "spring", 0.5, 1)}
-      initial="hidden"
-      whileInView="show"
-      viewport={{ once: false, amount: 0.25 }}
-      className="m-auto bg-slate-50 rounded-3xl w-5/6 h-auto grid lg:grid-cols-2 drop-shadow-2xl"
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+      transition={{ duration: 0.5 }}
+      className="mx-2 sm:m-auto bg-slate-50 rounded-3xl sm:w-5/6 w-full h-auto grid lg:grid-cols-2 drop-shadow-2xl"
     >
       <div className="w-full rounded-l-3xl relative overflow-hidden">
         <div className="bg-bg-img4 bg-cover absolute inset-0 bg-no-repeat z-10 w-full h-full bg-center"></div>

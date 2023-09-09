@@ -170,6 +170,13 @@ const AddressInfoForm = ({ formik }: any) => {
           onChange={formik.handleChange}
         />
         <CustomInput
+          type="email"
+          placeholder={t("Contact Email")}
+          name="email"
+          value={formik.values.email}
+          onChange={formik.handleChange}
+        />
+        <CustomInput
           type="text"
           placeholder={t("Profession")}
           name="profession"
@@ -181,13 +188,6 @@ const AddressInfoForm = ({ formik }: any) => {
           placeholder={t("Etablissement")}
           name="etablissement"
           value={formik.values.etablissement}
-          onChange={formik.handleChange}
-        />
-        <CustomInput
-          type="email"
-          placeholder={t("Email")}
-          name="email"
-          value={formik.values.email}
           onChange={formik.handleChange}
         />
       </div>

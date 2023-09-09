@@ -4,7 +4,6 @@ import styles from "../styles/Buttons.module.css";
 import Image from "next/image";
 import { useTranslation } from "react-i18next";
 import { motion } from "framer-motion";
-import { fadeIn } from "@/utils/motions";
 import {
   CustomContactButton,
   CustomEmailButton,
@@ -20,10 +19,10 @@ export default function Home() {
 
   return (
     <motion.div
-      variants={fadeIn("left", "spring", 0.5, 1)}
-      initial="hidden"
-      whileInView="show"
-      viewport={{ once: false, amount: 0.25 }}
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+      transition={{ duration: 0.5 }}
       className="m-auto bg-slate-50 rounded-3xl w-5/6 h-auto grid lg:grid-cols-2 drop-shadow-2xl"
     >
       <div className="w-full rounded-l-3xl relative overflow-hidden">
@@ -78,9 +77,9 @@ export default function Home() {
         </div>
 
         <p className="text-center text-gray-400 ">
-          Made with <span className="animate-pulse">❤️</span> by:{" "}
+          &copy; Made by:{" "}
           <Link
-            className="text-red-600 font-semibold truncate"
+            className="text-rose-600 font-semibold truncate"
             href="https://nidhalchelhi.vercel.app"
             target="_blank"
           >

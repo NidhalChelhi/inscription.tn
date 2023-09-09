@@ -1,15 +1,14 @@
 "use client";
 
 import { motion } from "framer-motion";
-
-import { footerVariants } from "../utils/motions";
 import Link from "next/link";
 
 const Footer = () => (
   <motion.footer
-    variants={footerVariants}
-    initial="hidden"
-    whileInView="show"
+    initial={{ opacity: 0 }}
+    animate={{ opacity: 1 }}
+    exit={{ opacity: 0 }}
+    transition={{ duration: 0.5 }}
     className="w-full sm:px-24 px-12 pt-16 pb-8"
   >
     <div className="w-full mx-auto flex flex-col sm:flex-row items-center justify-between  gap-8">

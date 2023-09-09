@@ -14,7 +14,13 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="w-full sm:px-24 px-12 py-8 sm:py-2">
+    <motion.nav
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+      transition={{ duration: 0.3 }}
+      className="w-full sm:px-24 px-12 py-8 sm:py-2"
+    >
       <div className="w-full relative z-10 flex justify-between items-center gap-4 sm:gap-8">
         <div className="hidden sm:flex h-20">
           <img src="/assets/tunisia-flag.png" className="object-contain" />
@@ -106,7 +112,7 @@ const Navbar = () => {
           </div>
         </div>
       </div>
-    </nav>
+    </motion.nav>
   );
 };
 

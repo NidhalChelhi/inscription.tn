@@ -1,7 +1,6 @@
 "use client";
 
-import { fadeIn } from "@/utils/motions";
-import { motion } from "framer-motion";
+import { AnimatePresence, motion } from "framer-motion";
 import Image from "next/image";
 import styles from "../../styles/Buttons.module.css";
 import { useTranslation } from "react-i18next";
@@ -36,69 +35,75 @@ const ChangePasswordModal = (props: any) => {
   }
 
   return (
-    <motion.div
-      variants={fadeIn("down", "spring", 0.1, 1)}
-      initial="hidden"
-      whileInView="show"
-      viewport={{ once: false, amount: 0.25 }}
-      className=" w-full flex flex-col rounded-3xl border-2 px-8 py-4 gap-8 items-center justify-center"
-    >
-      {/* Title */}
-      <div className="flex flex-col gap-2">
-        <h1 className="text-gray-800 text-2xl font-bold">
-          {t("Change Password")}
-        </h1>
-        <p className="text-center text-gray-600">{t("Change PWD Paragraph")}</p>
-      </div>
-      {/* Content */}
-      <form
-        className="flex flex-col gap-5 w-full"
-        onSubmit={formik.handleSubmit}
-      >
-        <div className={styles.input_group}>
-          <input
-            type={`${show ? "text" : "password"}`}
-            placeholder={t("Actual Password")}
-            className={styles.input_text}
-            {...formik.getFieldProps("actual")}
-          />
-          <span
-            className="icon flex items-center sm:px-4 px-2 hover:text-blue-600 cursor-pointer"
-            onClick={() => setShow(!show)}
+    <AnimatePresence>
+      {props.show && (
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
+          transition={{ duration: 0.5 }}
+          className=" w-full flex flex-col rounded-3xl border-2 px-8 py-4 gap-8 items-center justify-center"
+        >
+          {/* Title */}
+          <div className="flex flex-col gap-2">
+            <h1 className="text-gray-800 text-2xl font-bold">
+              {t("Change Password")}
+            </h1>
+            <p className="text-center text-gray-600">
+              {t("Change PWD Paragraph")}
+            </p>
+          </div>
+          {/* Content */}
+          <form
+            className="flex flex-col gap-5 w-full"
+            onSubmit={formik.handleSubmit}
           >
-            <HiFingerPrint size={25} />
-          </span>
-        </div>
-        <div className={styles.input_group}>
-          <input
-            type={`${show ? "text" : "password"}`}
-            placeholder={t("New Password")}
-            className={styles.input_text}
-            {...formik.getFieldProps("new")}
-          />
-        </div>
-        <div className={styles.input_group}>
-          <input
-            type={`${show ? "text" : "password"}`}
-            placeholder={t("Confirm New Password")}
-            className={styles.input_text}
-            {...formik.getFieldProps("newconfirm")}
-          />
-        </div>
-        <div className="w-full flex items-center justify-center">
-          <button className={`${styles.modal_button}`} type="submit">
-            <Image
-              src={"/assets/pwd.png"}
-              alt="print"
-              width={24}
-              height={24}
-              className="object-contain"
-            ></Image>
-            <p className="select-none">{t("Confirm")}</p>
-          </button>
-        </div>
-      </form>
-    </motion.div>
+            <div className={styles.input_group}>
+              <input
+                type={`${show ? "text" : "password"}`}
+                placeholder={t("Actual Password")}
+                className={styles.input_text}
+                {...formik.getFieldProps("actual")}
+              />
+              <span
+                className="icon flex items-center sm:px-4 px-2 hover:text-blue-600 cursor-pointer"
+                onClick={() => setShow(!show)}
+              >
+                <HiFingerPrint size={25} />
+              </span>
+            </div>
+            <div className={styles.input_group}>
+              <input
+                type={`${show ? "text" : "password"}`}
+                placeholder={t("New Password")}
+                className={styles.input_text}
+                {...formik.getFieldProps("new")}
+              />
+            </div>
+            <div className={styles.input_group}>
+              <input
+                type={`${show ? "text" : "password"}`}
+                placeholder={t("Confirm New Password")}
+                className={styles.input_text}
+                {...formik.getFieldProps("newconfirm")}
+              />
+            </div>
+            <div className="w-full flex items-center justify-center">
+              <button className={`${styles.modal_button}`} type="submit">
+                <Image
+                  src={"/assets/pwd.png"}
+                  alt="print"
+                  width={24}
+                  height={24}
+                  className="object-contain"
+                ></Image>
+                <p className="select-none">{t("Confirm")}</p>
+              </button>
+            </div>
+          </form>
+        </motion.div>
+      )}
+    </AnimatePresence>
   );
 };
 
