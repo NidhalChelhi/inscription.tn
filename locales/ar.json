@@ -141,6 +141,33 @@
   "Profession": "المهنة",
   "Etablissement": "المؤسسة",
 
+
+  "Informations parentales": "معلومات الوالدين",
+  "Etat du père": "حالة الأب*",
+  "Nom du père": "لقب الأب*",
+  "Prénom du père": "اسم الأب*",
+  "Profession du père": "مهنة الأب",
+  "Etablissement de père": "مؤسسة الأب",
+  "Etat de la mère": "حالة الأم*",
+  "Nom de la mère": "لقب الأم*",
+  "Prénom de la mère": "اسم الأم*",
+  "Profession de la mère": "مهنة الأم",
+  "Etablissement de la mère": "مؤسسة الأم",
+
+  "Adresse des parents":"عنوان الولي",
+  "N° Rue parent": "رقم الشارع",
+  "Ville parent": "المدينة",
+  "Code postal parent": "الترقيم البريدي",
+  "Gouvernorat parent": "الولاية",
+  "Pays parent": "البلد",
+  "Téléphone parent": "رقم الهاتف",
+
+  "Vivant": "حي",
+  "Decede": "متوفى",
+  
+  "Vivante": "حية",
+  "Decedee": "متوفية",
+
   "Masculin": "ذكر",
   "Feminin": "أنثى",
 
@@ -215,6 +242,13 @@
   "Please select a Governorate": "الرجاء اختيار ولاية",
   "Please select a Country": "الرجاء اختيار بلد",
   "Telephone Required": "رقم الهاتف مطلوب",
+
+  "Father's status is required": "مطلوب حالة الأب",
+  "Father's name is required": "مطلوب لقب الأب",
+  "Father's first name is required": "مطلوب اسم الأب",
+  "Mother's status is required": "مطلوب حالة الأم",
+  "Mother's name is required": "مطلوب لقب الأم",
+  "Mother's first name is required": "مطلوب اسم اللأم",
 
   "Data Saved": "تم حفظ معلوماتك",
 

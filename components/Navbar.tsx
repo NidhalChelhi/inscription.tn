@@ -1,4 +1,3 @@
-import { navVariants } from "@/utils/motions";
 import { motion } from "framer-motion";
 import { useState } from "react";
 import { useTranslation } from "react-i18next";

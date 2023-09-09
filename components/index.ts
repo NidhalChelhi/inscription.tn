@@ -19,6 +19,10 @@ import Footer from "./Footer";
 import GeneralInfoForm from "./Forms/GeneralInfoForm";
 import AddressInfoForm from "./Forms/AddressInfoForm";
 import BacInfoForm from "./Forms/BacInfoForm";
+import ParentsInfoForm from "./Forms/ParentsInfoForm";
+import ParentsAddressForm from "./Forms/ParentsAddressForm";
+import PartnerForm from "./Forms/PartnerForm";
+
 import CustomSaveButton from "./CustomButtons/CustomSaveButton";
 
 export {
@@ -39,6 +43,9 @@ export {
   GeneralInfoForm,
   BacInfoForm,
   AddressInfoForm,
+  ParentsInfoForm,
+  ParentsAddressForm,
+  PartnerForm,
   Navbar,
   Footer,
 };

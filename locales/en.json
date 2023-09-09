@@ -141,6 +141,35 @@
   "Profession": "Profession",
   "Etablissement": "Institution",
 
+
+
+  "Informations parentales": "Parental Information",
+  "Etat du père": "Father's Status*",
+  "Nom du père": "Father's Name*",
+  "Prénom du père": "Father's First Name*",
+  "Profession du père": "Father's Occupation",
+  "Etablissement de père": "Father's Institution",
+  "Etat de la mère": "Mother's Status*",
+  "Nom de la mère": "Mother's Name*",
+  "Prénom de la mère": "Mother's First Name*",
+  "Profession de la mère": "Mother's Occupation",
+  "Etablissement de la mère": "Mother's Institution",
+
+  "Adresse des parents":"Parents Address",
+  "N° Rue parent": "Street Number",
+  "Ville parent": "City",
+  "Code postal parent": "Postal Code",
+  "Gouvernorat parent": "Governorate",
+  "Pays parent": "Country",
+  "Téléphone parent": "Phone Number",
+
+  "Vivant": "Alive",
+  "Decede": "Deceased",
+
+  "Vivante": "Alive",
+  "Decedee": "Deceased",
+
+
   "Masculin": "Male",
   "Feminin": "Female",
 
@@ -215,6 +244,13 @@
   "Please select a Governorate": "Please select a Governorate",
   "Please select a Country": "Please select a Country",
   "Telephone Required": "Telephone Required",
+
+  "Father's status is required": "Father's status is required",
+  "Father's name is required": "Father's name is required",
+  "Father's first name is required": "Father's first name is required",
+  "Mother's status is required": "Mother's status is required",
+  "Mother's name is required": "Mother's name is required",
+  "Mother's first name is required": "Mother's first name is required",
 
   "Data Saved": "Your Informations has been saved"
 }

@@ -5,6 +5,7 @@ import { toast } from "react-toastify";
 import { useFormik } from "formik";
 import {
   firstFormValidate,
+  fourthFormValidate,
   secondFormValidate,
   thirdFormValidate,
 } from "../../lib/infosvalidate";
@@ -14,6 +15,9 @@ import {
   BacInfoForm,
   CustomSaveButton,
   GeneralInfoForm,
+  ParentsAddressForm,
+  ParentsInfoForm,
+  PartnerForm,
 } from "..";
 import { useState } from "react";
 import CustomBackButton from "../CustomButtons/CustomBackButton";
@@ -67,6 +71,45 @@ const InfosModal = (props: any) => {
     onSubmit: onSubmit3,
   });
 
+  const formik4 = useFormik({
+    initialValues: {
+      etatPere: "",
+      nomPere: "",
+      prenomPere: "",
+      professionPere: "",
+      etablissementPere: "",
+      etatMere: "",
+      nomMere: "",
+      prenomMere: "",
+      professionMere: "",
+      etablissementMere: "",
+    },
+    onSubmit: onSubmit4,
+  });
+
+  const formik5 = useFormik({
+    initialValues: {
+      parentsRue: "",
+      parentsVille: "",
+      parentsCodePostale: "",
+      parentsGov: "",
+      parentsPays: "",
+      parentsPhone: "",
+    },
+    onSubmit: onSubmit5,
+  });
+
+  const formik6 = useFormik({
+    initialValues: {
+      partnerNom: "",
+      partnerPrenom: "",
+      partnerProfession: "",
+      partnerEtablissement: "",
+      nbEnfants: "",
+    },
+    onSubmit: onSubmit6,
+  });
+
   async function onSubmit1(values: any) {
     const errors = firstFormValidate(values);
     if (Object.keys(errors).length === 0) {
@@ -95,13 +138,34 @@ const InfosModal = (props: any) => {
     const errors = thirdFormValidate(values);
     if (Object.keys(errors).length === 0) {
       toast.success(t("Data Saved"));
-      props.onClose();
+      handleNextForm();
     } else {
       Object.keys(errors).forEach((key) => {
         toast.error(t(errors[key as keyof typeof errors]));
       });
     }
   }
+  async function onSubmit4(values: any) {
+    const errors = fourthFormValidate(values);
+    if (Object.keys(errors).length === 0) {
+      toast.success(t("Data Saved"));
+      handleNextForm();
+    } else {
+      Object.keys(errors).forEach((key) => {
+        toast.error(t(errors[key as keyof typeof errors]));
+      });
+    }
+  }
+  async function onSubmit5(values: any) {
+    toast.success(t("Data Saved"));
+    handleNextForm();
+  }
+
+  async function onSubmit6(values: any) {
+    toast.success(t("Data Saved"));
+    props.onClose();
+  }
+
   return (
     <AnimatePresence>
       {props.show && (
@@ -125,7 +189,7 @@ const InfosModal = (props: any) => {
           {currentForm === 1 && (
             <form
               onSubmit={formik1.handleSubmit}
-              className="flex flex-col gap-5"
+              className="flex flex-col gap-5 w-full"
             >
               <GeneralInfoForm formik={formik1} />
               <CustomSaveButton />
@@ -134,7 +198,7 @@ const InfosModal = (props: any) => {
           {currentForm === 2 && (
             <form
               onSubmit={formik2.handleSubmit}
-              className="flex flex-col gap-5"
+              className="flex flex-col gap-5 w-full"
             >
               <BacInfoForm formik={formik2} />
               <div className="flex flex-row items-center justify-center gap-5">
@@ -151,9 +215,60 @@ const InfosModal = (props: any) => {
           {currentForm === 3 && (
             <form
               onSubmit={formik3.handleSubmit}
-              className="flex flex-col gap-5"
+              className="flex flex-col gap-5 w-full"
             >
               <AddressInfoForm formik={formik3} />
+              <div className="flex flex-row items-center justify-center gap-5">
+                <div
+                  className="cursor-pointer select-none"
+                  onClick={handlePreviousForm}
+                >
+                  <CustomBackButton />
+                </div>
+                <CustomSaveButton />
+              </div>
+            </form>
+          )}
+          {currentForm === 4 && (
+            <form
+              onSubmit={formik4.handleSubmit}
+              className="flex flex-col gap-5 w-full"
+            >
+              <ParentsInfoForm formik={formik4} />
+              <div className="flex flex-row items-center justify-center gap-5">
+                <div
+                  className="cursor-pointer select-none"
+                  onClick={handlePreviousForm}
+                >
+                  <CustomBackButton />
+                </div>
+                <CustomSaveButton />
+              </div>
+            </form>
+          )}
+          {currentForm === 5 && (
+            <form
+              onSubmit={formik5.handleSubmit}
+              className="flex flex-col gap-5 w-full"
+            >
+              <ParentsAddressForm formik={formik5} />
+              <div className="flex flex-row items-center justify-center gap-5">
+                <div
+                  className="cursor-pointer select-none"
+                  onClick={handlePreviousForm}
+                >
+                  <CustomBackButton />
+                </div>
+                <CustomSaveButton />
+              </div>
+            </form>
+          )}
+          {currentForm === 6 && (
+            <form
+              onSubmit={formik6.handleSubmit}
+              className="flex flex-col gap-5 w-full"
+            >
+              <PartnerForm formik={formik6} />
               <div className="flex flex-row items-center justify-center gap-5">
                 <div
                   className="cursor-pointer select-none"
