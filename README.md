@@ -1,34 +1,75 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+![Logo](https://github.com/NidhalChelhi/inscription.tn/blob/main/public/assets/logo.svg)
+
+
+# Inscription.tn
+
+Welcome to the **inscription.tn** project repository! This dynamic platform is designed to revolutionize the university registration experience in Tunisia. Powered by modern web technologies, it provides a faster, more intuitive, and visually appealing registration process.
+
+## Live Demo
+
+Check out the live demo of the project [here](https://inscription-tn.vercel.app).
+
+## Technologies Used
+
+This project is built using a stack of cutting-edge technologies, including:
+
+- [React.js](https://reactjs.org/)
+- [Next.js](https://nextjs.org/)
+- [TypeScript](https://www.typescriptlang.org/)
+- [Tailwind CSS](https://tailwindcss.com/)
+- [Framer Motion](https://www.framer.com/motion/)
+
+## Features
+
+- **User-Friendly Interface:** The platform offers an intuitive and visually appealing user interface to simplify the registration process.
+
+- **Speedy Performance:** Built with performance in mind, it ensures a fast and responsive experience for users.
+
+- **No Backend Required:** While there's no backend in the current version, the frontend technologies used enable a seamless user experience.
+
+## Screenshots
+
+### Laptop Screenshots
+
+![Screenshot 1](Screenshots/Pages/WelcomePageEN.png)
+*Welcome Page*
+
+![Screenshot 2](Screenshots/Pages/LoginPageEN.png)
+*Login Page*
+
+![Screenshot 3](Screenshots/Pages/RegisterPageEN.png)
+*Register Page*
+
+![Screenshot 4](Screenshots/Pages/DashboardPageEN.png)
+*Dashboard Page*
+
+### Mobile Screenshots
+![Welcome Page](https://github.com/NidhalChelhi/inscription.tn/blob/main/Screenshots/Mobile/WelcomePage.png) | ![Login Page](https://github.com/NidhalChelhi/inscription.tn/blob/main/Screenshots/Mobile/LoginPage.png) | ![Register Page](https://github.com/NidhalChelhi/inscription.tn/blob/main/Screenshots/Mobile/RegisterPage.png) | ![Dashboard Page](https://github.com/NidhalChelhi/inscription.tn/blob/main/Screenshots/Mobile/DashboardPage.png)
+:---:|:---:|:---:|:---:
+Welcome Page | Login Page | Register Page | Dashboard Page
+
 
 ## Getting Started
 
-First, run the development server:
+To get a local copy of the project up and running, follow these steps:
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-```
+1. Clone this repository to your local machine:
+   ```bash
+   git clone https://github.com/NidhalChelhi/inscription.tn.git
+   ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+2. Navigate to the project directory:
+   ```bash
+   cd inscription.tn
+   ```
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+3. Install project dependencies:
+   ```bash
+   npm install
+   ```
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+4. Start the development server:
+   ```bash
+   npm run dev
+   ```
 
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
