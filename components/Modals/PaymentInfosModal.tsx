@@ -7,7 +7,7 @@ import styles from "../../styles/Buttons.module.css";
 import { useTranslation } from "react-i18next";
 import { toast } from "react-toastify";
 
-const PaymentInfosModal = () => {
+const PaymentInfosModal = (props: any) => {
   const { t, i18n } = useTranslation();
 
   return (
@@ -62,8 +62,11 @@ const PaymentInfosModal = () => {
 
         <div className="w-full flex items-center justify-center">
           <div
-            className={styles.pay_button}
-            onClick={() => toast.success(t("Payment Successful"))}
+            className={styles.modal_button}
+            onClick={() => {
+              toast.success(t("Payment Successful"));
+              props.onClose();
+            }}
           >
             <Image
               src={"/assets/pay.png"}

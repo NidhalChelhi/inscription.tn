@@ -14,12 +14,7 @@ const Navbar = () => {
   };
 
   return (
-    <motion.nav
-      variants={navVariants}
-      initial="hidden"
-      whileInView="show"
-      className="w-full sm:px-24 px-12 py-8 sm:py-2"
-    >
+    <nav className="w-full sm:px-24 px-12 py-8 sm:py-2">
       <div className="w-full relative z-10 flex justify-between items-center gap-4 sm:gap-8">
         <div className="hidden sm:flex h-20">
           <img src="/assets/tunisia-flag.png" className="object-contain" />
@@ -49,10 +44,10 @@ const Navbar = () => {
               />
               <span className="font-bold text-[18px] leading-[30.24px] text-gray-600 hover:text-blue-700 select-none">
                 {i18n.language === "ar"
-                  ? "عربي"
+                  ? "AR"
                   : i18n.language === "en"
-                  ? "English"
-                  : "Français"}
+                  ? "EN"
+                  : "FR"}
               </span>
             </button>
             {toggle && (
@@ -111,7 +106,7 @@ const Navbar = () => {
           </div>
         </div>
       </div>
-    </motion.nav>
+    </nav>
   );
 };
 

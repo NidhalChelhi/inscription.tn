@@ -1,58 +1,111 @@
 "use client";
 
-import { fadeIn, slideIn } from "@/utils/motions";
+import { fadeIn } from "@/utils/motions";
 import { motion } from "framer-motion";
-import Image from "next/image";
-import styles from "../../styles/Buttons.module.css";
 import { useTranslation } from "react-i18next";
 import { toast } from "react-toastify";
 import { useFormik } from "formik";
-import { useState } from "react";
-import { changePasswordValidate } from "@/lib/validate";
-import { HiFingerPrint } from "react-icons/hi";
-import { CustomInput, CustomSelect } from "../CustomInput";
 import {
-  civilOptions,
-  govOptions,
-  mentionOptions,
-  militaryOptions,
-  paysOptions,
-  sectionOptions,
-  sessionOptions,
-  sexeOptions,
-} from "@/constants";
-const InfosModal = () => {
-  const { t, i18n } = useTranslation();
-  const [show, setShow] = useState(false);
-  const formik = useFormik({
+  firstFormValidate,
+  secondFormValidate,
+  thirdFormValidate,
+} from "../../lib/infosvalidate";
+
+import {
+  AddressInfoForm,
+  BacInfoForm,
+  CustomSaveButton,
+  GeneralInfoForm,
+} from "..";
+import { useState } from "react";
+import CustomBackButton from "../CustomButtons/CustomBackButton";
+const InfosModal = (props: any) => {
+  const { t } = useTranslation();
+  const [currentForm, setCurrentForm] = useState(1);
+  const handleNextForm = () => {
+    setCurrentForm((prevForm) => prevForm + 1);
+  };
+  const handlePreviousForm = (props: any) => {
+    setCurrentForm((prevForm) => prevForm - 1);
+  };
+  const formik1 = useFormik({
     initialValues: {
-      actual: "",
-      new: "",
-      newconfirm: "",
+      nomComplet: "",
+      sexe: "",
+      dateNaissance: "",
+      lieuNaissance: "",
+      gouvernoratNaissance: "",
+      paysNaissance: "",
+      nationalite: "",
+      numeroPasseport: "",
+      numeroCNSS: "",
+      etatCivil: "",
+      statutMilitaire: "",
     },
-    onSubmit: onSubmit,
+    onSubmit: onSubmit1,
+  });
+  const formik2 = useFormik({
+    initialValues: {
+      anneeBac: "",
+      sectionBac: "",
+      mentionBac: "",
+      sessionBac: "",
+      paysBac: "",
+    },
+    onSubmit: onSubmit2,
+  });
+  const formik3 = useFormik({
+    initialValues: {
+      rue: "",
+      ville: "",
+      codePostal: "",
+      gouvernoratAdresse: "",
+      paysAdresse: "",
+      telephone: "",
+      profession: "",
+      etablissement: "",
+      email: "",
+    },
+    onSubmit: onSubmit3,
   });
 
-  // Handle form submission
-  async function onSubmit(values: any) {
-    const validationErrors = changePasswordValidate(values);
-    if (Object.keys(validationErrors).length === 0) {
-      toast.success(t("Password Changed"));
+  async function onSubmit1(values: any) {
+    const errors = firstFormValidate(values);
+    if (Object.keys(errors).length === 0) {
+      toast.success("Data Saved");
+      handleNextForm();
     } else {
-      Object.keys(validationErrors).forEach((key) => {
-        toast.error(t(validationErrors[key as keyof typeof validationErrors]));
+      Object.keys(errors).forEach((key) => {
+        toast.error(t(errors[key as keyof typeof errors]));
       });
     }
   }
 
+  async function onSubmit2(values: any) {
+    const errors = secondFormValidate(values);
+    if (Object.keys(errors).length === 0) {
+      toast.success("Data saved");
+      handleNextForm();
+    } else {
+      Object.keys(errors).forEach((key) => {
+        toast.error(t(errors[key as keyof typeof errors]));
+      });
+    }
+  }
+
+  async function onSubmit3(values: any) {
+    const errors = thirdFormValidate(values);
+    if (Object.keys(errors).length === 0) {
+      toast.success("Data saved");
+      props.onClose();
+    } else {
+      Object.keys(errors).forEach((key) => {
+        toast.error(t(errors[key as keyof typeof errors]));
+      });
+    }
+  }
   return (
-    <motion.div
-      variants={fadeIn("down", "spring", 0.1, 1)}
-      initial="hidden"
-      whileInView="show"
-      viewport={{ once: false, amount: 0.25 }}
-      className=" w-full flex flex-col rounded-3xl border-2 px-8 py-4 gap-8 items-center justify-center"
-    >
+    <motion.div className=" w-full flex flex-col rounded-3xl border-2 px-8 py-4 gap-8 items-center justify-center">
       {/* Title */}
       <div className="flex flex-col gap-2">
         <h1 className="text-gray-800 text-2xl font-bold">
@@ -63,68 +116,40 @@ const InfosModal = () => {
         </p>
       </div>
       {/* Content */}
-      <form
-        className="flex flex-col gap-6 w-full"
-        // onSubmit={formik.handleSubmit}
-      >
-        <div className="flex flex-col gap-2">
-          <p className="text-start font-semibold">Informations générales</p>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3  w-full gap-4">
-            <CustomInput type="text" placeholder="Nom Complet" />
-            <CustomSelect options={sexeOptions} />
-            <CustomInput type="date" placeholder="Date de naissance" />
-            <CustomInput type="text" placeholder="Lieu de naissance" />
-            <CustomSelect options={govOptions} />
-            <CustomSelect options={paysOptions} />
-            <CustomInput type="text" placeholder="Nationalité" />
-            <CustomInput type="number" placeholder="N° de passeport" />
-            <CustomInput type="number" placeholder="N° CNSS" />
-            <CustomSelect options={civilOptions} />
-            <CustomSelect options={militaryOptions} />
+      {currentForm === 1 && (
+        <form onSubmit={formik1.handleSubmit} className="flex flex-col gap-5">
+          <GeneralInfoForm formik={formik1} />
+          <CustomSaveButton />
+        </form>
+      )}
+      {currentForm === 2 && (
+        <form onSubmit={formik2.handleSubmit} className="flex flex-col gap-5">
+          <BacInfoForm formik={formik2} />
+          <div className="flex flex-row items-center justify-center gap-5">
+            <div
+              className="cursor-pointer select-none"
+              onClick={handlePreviousForm}
+            >
+              <CustomBackButton />
+            </div>
+            <CustomSaveButton />
           </div>
-        </div>
-
-        <div className="flex flex-col gap-2">
-          <p className="text-start font-semibold">
-            Baccalauréat ou diplôme équivalent
-          </p>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3  w-full gap-4">
-            <CustomInput type="number" placeholder="Année du bac" />
-            <CustomSelect options={sectionOptions} />
-            <CustomSelect options={mentionOptions} />
-            <CustomSelect options={sessionOptions} />
-            <CustomSelect options={paysOptions} />
+        </form>
+      )}
+      {currentForm === 3 && (
+        <form onSubmit={formik3.handleSubmit} className="flex flex-col gap-5">
+          <AddressInfoForm formik={formik3} />
+          <div className="flex flex-row items-center justify-center gap-5">
+            <div
+              className="cursor-pointer select-none"
+              onClick={handlePreviousForm}
+            >
+              <CustomBackButton />
+            </div>
+            <CustomSaveButton />
           </div>
-        </div>
-
-        <div className="flex flex-col gap-2">
-          <p className="text-start font-semibold">Adresse</p>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3  w-full gap-4">
-            <CustomInput type="text" placeholder="N° et Rue" />
-            <CustomInput type="text" placeholder="Ville" />
-            <CustomInput type="number" placeholder="Code postal" />
-            <CustomSelect options={govOptions} />
-            <CustomSelect options={paysOptions} />
-            <CustomInput type="tel" placeholder="Téléphone" />
-            <CustomInput type="text" placeholder="Profession" />
-            <CustomInput type="text" placeholder="Etablissement" />
-            <CustomInput type="email" placeholder="Email" />
-          </div>
-        </div>
-
-        <div className="w-full flex items-center justify-center">
-          <button className={`${styles.changepwd_button}`} type="submit">
-            <Image
-              src={"/assets/pwd.png"}
-              alt="print"
-              width={24}
-              height={24}
-              className="object-contain"
-            ></Image>
-            <p className="select-none">{t("Confirm")}</p>
-          </button>
-        </div>
-      </form>
+        </form>
+      )}
     </motion.div>
   );
 };

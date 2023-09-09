@@ -10,7 +10,7 @@ import { useFormik } from "formik";
 import { useState } from "react";
 import { changePasswordValidate } from "@/lib/validate";
 import { HiFingerPrint } from "react-icons/hi";
-const ChangePasswordModal = () => {
+const ChangePasswordModal = (props: any) => {
   const { t, i18n } = useTranslation();
   const [show, setShow] = useState(false);
   const formik = useFormik({
@@ -25,9 +25,9 @@ const ChangePasswordModal = () => {
   // Handle form submission
   async function onSubmit(values: any) {
     const validationErrors = changePasswordValidate(values);
-    console.log("qegfzeg");
     if (Object.keys(validationErrors).length === 0) {
       toast.success(t("Password Changed"));
+      props.onClose();
     } else {
       Object.keys(validationErrors).forEach((key) => {
         toast.error(t(validationErrors[key as keyof typeof validationErrors]));
@@ -86,7 +86,7 @@ const ChangePasswordModal = () => {
           />
         </div>
         <div className="w-full flex items-center justify-center">
-          <button className={`${styles.changepwd_button}`} type="submit">
+          <button className={`${styles.modal_button}`} type="submit">
             <Image
               src={"/assets/pwd.png"}
               alt="print"

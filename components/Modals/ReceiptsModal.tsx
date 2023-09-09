@@ -7,7 +7,7 @@ import styles from "../../styles/Buttons.module.css";
 import { useTranslation } from "react-i18next";
 import { toast } from "react-toastify";
 
-const ReceiptsModal = () => {
+const ReceiptsModal = (props: any) => {
   const { t, i18n } = useTranslation();
 
   return (
@@ -47,8 +47,11 @@ const ReceiptsModal = () => {
         </h1>
         <div className="w-full flex items-center justify-center">
           <div
-            className={styles.print_button}
-            onClick={() => toast.success(t("Print Successful"))}
+            className={styles.modal_button}
+            onClick={() => {
+              toast.success(t("Print Successful"));
+              props.onClose();
+            }}
           >
             <Image
               src={"/assets/receipt.png"}

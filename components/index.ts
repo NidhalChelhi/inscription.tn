@@ -16,6 +16,11 @@ import ChangePasswordModal from "./Modals/ChangePasswordModal";
 import Navbar from "./Navbar";
 import Footer from "./Footer";
 
+import GeneralInfoForm from "./Forms/GeneralInfoForm";
+import AddressInfoForm from "./Forms/AddressInfoForm";
+import BacInfoForm from "./Forms/BacInfoForm";
+import CustomSaveButton from "./CustomButtons/CustomSaveButton";
+
 export {
   CustomEmailButton,
   CustomPhoneButton,
@@ -24,12 +29,16 @@ export {
   CustomLegalNoticeButton,
   CustomUniversitiesButton,
   CustomContactButton,
+  CustomSaveButton,
   InfosModal,
   StudentCardModal,
   StudentCardSMModal,
   PaymentInfosModal,
   ReceiptsModal,
   ChangePasswordModal,
+  GeneralInfoForm,
+  BacInfoForm,
+  AddressInfoForm,
   Navbar,
   Footer,
 };
