@@ -16,7 +16,11 @@ const CustomEmailButton = () => {
         height={24}
         className="object-contain"
       ></Image>
-      <p className="flex-grow">inscription@mesrs.tn</p>
+      <p 
+        className="flex-grow text-base md:text-sm"
+      >
+        inscription@mesrs.tn
+      </p>
     </Link>
   );
 };
