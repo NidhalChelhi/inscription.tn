@@ -18,12 +18,16 @@ export default function Page() {
         className="w-3/4 mx-auto flex flex-col items-center justify-center gap-8"
         style={
           i18n.language === "ar"
-            ? { direction: "rtl", textAlign: "right" }
+            ? { direction: "rtl", textAlign: "left" }
             : { direction: "ltr", textAlign: "left" }
         }
       >
         {/* Header */}
-        <div className="flex flex-col gap-12 py-2">
+        <div 
+          className="flex flex-col gap-12 py-2"
+          dir="ltr"
+          //in case the hooks not making effects, the dir attribute will be used
+        >
           <h1 className="font-bold text-gray-800 md:text-4xl text-2xl">
             Guide - Inscription en ligne
           </h1>

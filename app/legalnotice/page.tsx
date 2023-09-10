@@ -18,7 +18,7 @@ export default function Page() {
         className="w-3/4 mx-auto flex flex-col items-center justify-center gap-8"
         style={
           i18n.language === "ar"
-            ? { direction: "rtl", textAlign: "right" }
+            ? { direction: "rtl", textAlign: "left" }
             : { direction: "ltr", textAlign: "left" }
         }
       >
