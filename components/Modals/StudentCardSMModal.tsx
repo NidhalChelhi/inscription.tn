@@ -36,7 +36,7 @@ const StudentCardSMModal = (props: any) => {
             <div className="rounded-3xl overflow-hidden w-1/3 flex items-center justify-center">
               <img
                 src="assets/nidhal-pfp.jpeg"
-                alt="Student Image"
+                alt="student image"
                 className="w-full object-contain"
               />
             </div>

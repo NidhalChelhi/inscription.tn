@@ -38,7 +38,7 @@ const StudentCardModal = (props: any) => {
               <div className="rounded-3xl overflow-hidden">
                 <img
                   src="assets/nidhal-pfp.jpeg"
-                  alt="Student Image"
+                  alt="student image"
                   className="object-cover"
                 />
               </div>

@@ -11,7 +11,7 @@ const CustomSaveButton = () => {
       <button className={`${styles.modal_button}`} type="submit">
         <Image
           src={"/assets/checkmark.png"}
-          alt="print"
+          alt="save"
           width={24}
           height={24}
           className="object-contain"

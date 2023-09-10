@@ -84,7 +84,7 @@ const Navbar = () => {
                   >
                     <img
                       src="/assets/france.png"
-                      alt="tunisia"
+                      alt="france"
                       width={30}
                       height={30}
                       className="object-cover"
@@ -98,7 +98,7 @@ const Navbar = () => {
                   >
                     <img
                       src="/assets/uk.png"
-                      alt="tunisia"
+                      alt="uk"
                       width={30}
                       height={30}
                       className="object-cover"

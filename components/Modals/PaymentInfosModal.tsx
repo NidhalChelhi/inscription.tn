@@ -73,7 +73,7 @@ const PaymentInfosModal = (props: any) => {
               >
                 <Image
                   src={"/assets/pay.png"}
-                  alt="logout"
+                  alt="pay"
                   width={24}
                   height={24}
                   className="object-contain"

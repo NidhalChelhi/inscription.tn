@@ -168,7 +168,7 @@ export default function Page() {
             <div>
               <img
                 src="/assets/infos.png"
-                alt="Student Card"
+                alt="informations"
                 className="w-full h-[50px] object-cover"
               ></img>
             </div>
@@ -185,7 +185,7 @@ export default function Page() {
             <div>
               <img
                 src="/assets/card.png"
-                alt="Student Card"
+                alt="student card"
                 className="w-full h-[50px] object-cover"
               ></img>
             </div>
@@ -202,7 +202,7 @@ export default function Page() {
             <div>
               <img
                 src="/assets/payment.png"
-                alt="student card"
+                alt="payment"
                 className="w-full h-[50px] object-cover"
               ></img>
             </div>
@@ -219,7 +219,7 @@ export default function Page() {
             <div>
               <img
                 src="/assets/recus.png"
-                alt="Receipts"
+                alt="receipts"
                 className="w-full h-[50px] object-cover"
               ></img>
             </div>
@@ -236,7 +236,7 @@ export default function Page() {
             <div>
               <img
                 src="/assets/pwd.png"
-                alt="Change Password"
+                alt="change password"
                 className="w-full h-[50px] object-cover"
               ></img>
             </div>
@@ -248,7 +248,7 @@ export default function Page() {
             <div>
               <img
                 src="/assets/results.png"
-                alt="Results"
+                alt="results"
                 className="w-full h-[50px] object-cover"
               ></img>
             </div>

@@ -92,7 +92,7 @@ const ChangePasswordModal = (props: any) => {
               <button className={`${styles.modal_button}`} type="submit">
                 <Image
                   src={"/assets/pwd.png"}
-                  alt="print"
+                  alt="change password"
                   width={24}
                   height={24}
                   className="object-contain"
