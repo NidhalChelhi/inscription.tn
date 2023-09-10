@@ -31,20 +31,20 @@ This project is built using a stack of cutting-edge technologies, including:
 
 ### Laptop Screenshots
 
-![Screenshot 1](screenshots/Pages/WelcomePageEN.png)
+![Screenshot 1](Screenshots/Pages/WelcomePageEN.png)
 *Welcome Page*
 
-![Screenshot 2](screenshots/Pages/LoginPageEN.png)
+![Screenshot 2](Screenshots/Pages/LoginPageEN.png)
 *Login Page*
 
-![Screenshot 3](screenshots/Pages/RegisterPageEN.png)
+![Screenshot 3](Screenshots/Pages/RegisterPageEN.png)
 *Register Page*
 
-![Screenshot 4](screenshots/Pages/DashboardPageEN.png)
+![Screenshot 4](Screenshots/Pages/DashboardPageEN.png)
 *Dashboard Page*
 
 ### Mobile Screenshots
-![Welcome Page](https://github.com/NidhalChelhi/inscription.tn/blob/main/screenshots/Mobile/WelcomePage.png) | ![Login Page](https://github.com/NidhalChelhi/inscription.tn/blob/main/screenshots/Mobile/LoginPage.png) | ![Register Page](https://github.com/NidhalChelhi/inscription.tn/blob/main/screenshots/Mobile/RegisterPage.png) | ![Dashboard Page](https://github.com/NidhalChelhi/inscription.tn/blob/main/screenshots/Mobile/DashboardPage.png)
+![Welcome Page](https://github.com/NidhalChelhi/inscription.tn/blob/main/Screenshots/Mobile/WelcomePage.png) | ![Login Page](https://github.com/NidhalChelhi/inscription.tn/blob/main/Screenshots/Mobile/LoginPage.png) | ![Register Page](https://github.com/NidhalChelhi/inscription.tn/blob/main/Screenshots/Mobile/RegisterPage.png) | ![Dashboard Page](https://github.com/NidhalChelhi/inscription.tn/blob/main/Screenshots/Mobile/DashboardPage.png)
 :---:|:---:|:---:|:---:
 Welcome Page | Login Page | Register Page | Dashboard Page
 
