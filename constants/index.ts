@@ -125,15 +125,15 @@ export const faq = [
     answer: `Le système vérifie les données que vous introduisez dans le formulaire. Veuillez tout d'abord remplir les champs obligatoires marqués par une 01.08.2007 que les données sont correctes. Par exemple, dans le code postale, le système n'acceptera qu'une valeur numérique (exemple : 1024). Pour corriger les erreurs, veuillez suivre les messages donnés par le système.`,
   },
   {
-    question: `J'ai choisi de payer à la fois les deux tranches de mon inscription mais avant le paiement j'ai changé d'avis. Est ce que je peux revenir et choisir de payer une seule tranche ?`,
+    question: `J'ai choisi de payer à la fois les deux tranches de mon inscription mais avant le paiement j'ai changé d'avis. Est ce que je peux revenir et choisir de payer une seule tranche?`,
     answer: `Tant que vous n'avez pas encore effectué la paiement électronique, vous pouvez à tout moment recommencer l'inscription dés le début.`,
   },
   {
-    question: `Le système refuse d'accepter le N° de carte e-dinar et le code confidentiel ?`,
+    question: `Le système refuse d'accepter le N° de carte e-dinar et le code confidentiel?`,
     answer: `Pour pouvoir utiliser votre carte e-dinar, vous devez l'activer sur le site http://e-dinar.poste.tn. Si ceci est fait, vérifier que vous avez introduit correctement le numéro de la carte e-dinar et le code confidentiel qui est fournit avec la carte. Si le problème persiste, contacter le Centre Monétique de la Poste dont les coordonnées existent sur le dos de votre carte e-dinar.`,
   },
   {
-    question: `Le système m'a retiré deux fois le montant de l'inscription. Que faire ?`,
+    question: `Le système m'a retiré deux fois le montant de l'inscription. Que faire?`,
     answer: `Il faut contcater le centre d'appel de la poste tunisienne sur le numéro 1828 (position 2) et ils vont se charger de votre problème..`,
   },
   {
@@ -145,21 +145,21 @@ export const faq = [
     answer: `Maintenant que vous avez achevé le paiement électronique de votre inscription, il vous reste à compléter votre dossier d'inscription et de le présenter à votre établissement avec le début des cours. Veuillez consulter votre établissement sur les documents nécessaires pour compléter votre dossier et sur les délais fixés.`,
   },
   {
-    question: `Existe-il d'autres services en ligne qui peuvent me faciliter la vie en tant qu'étudiant ?`,
+    question: `Existe-il d'autres services en ligne qui peuvent me faciliter la vie en tant qu'étudiant?`,
     answer: `Pour le moment, vous pouvez acquérir électroniquement votre abonnement de transport dans le site de la Société de Transport de Tunis STT [www.snt.com.tn]. Vous pouvez également recevoir un abonnement Internet gratuit chez le Centre de Calcul Khawarizmi [www.cck.rnu.tn](si vous êtes en 2ème ou 3ème cycle). Finalement, vous pouvez consultez l'affectation au foyers universitaires.`,
   },
   {
-    question: `Le système m'affiche le message "Désactivée pour non paiement de la deuxième tranche de l'AU précédante" alors que je suis boursié et je suis dispensé du paiement de la deuxième tranche des frais d'inscription universitaires. Que dois-je faire ?`,
+    question: `Le système m'affiche le message "Désactivée pour non paiement de la deuxième tranche de l'AU précédante" alors que je suis boursié et je suis dispensé du paiement de la deuxième tranche des frais d'inscription universitaires. Que dois-je faire?`,
     answer: `Vous devez contacter le service de scolarité de votre établissement. C'est en effet votre établissement qui a la charge de mettre à jour l'information "boursier" dans la base de données du système pour que vous soyez dispenser de payer la deuxième tranche des frais d'inscription universitaires.`,
   },
   {
     question:
-      "Je suis un étudiant étranger, d'où je peux obtenir mon identifiant unique ?",
+      "Je suis un étudiant étranger, d'où je peux obtenir mon identifiant unique?",
     answer: `Cet identifiant est délivré par la Direction de la Coopération Internationale du Ministère de l'Enseignement Supérieur, de la Recherche Scientifique et de la Technologie lors de la première Inscription de cet étudiant en Tunisie. Vous pouvez contacter directement la Direction ou bien vous pouvez l'obtenir directement auprès du service de scolarité de l'établissement universitaire auquel vous êtes inscris.`,
   },
   {
     question:
-      "Je bénificie d'une réorientation vers un nouvel établissement mais le site m'affiche toujours l'ancien établissement. Que dois-je faire ?",
+      "Je bénificie d'une réorientation vers un nouvel établissement mais le site m'affiche toujours l'ancien établissement. Que dois-je faire?",
     answer: `Vous devez contcater le service scolarité de votre nouvel établissement . C'est en effet votre nouvel établissement qui a la charge de gérer les données des étudiants dans la base de données.
     Attention il faut faire le paiement seulement dans l'établissement désiré.`,
   },

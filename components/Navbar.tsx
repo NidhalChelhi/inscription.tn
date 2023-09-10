@@ -56,7 +56,7 @@ const Navbar = () => {
               </span>
             </button>
             {toggle && (
-              <div className="origin-top-right absolute right-0 mt-2 w-40 rounded-xl shadow-lg bg-blue-50 ring-2 ring-black ring-opacity-5">
+              <div className="origin-top-right absolute right-0 mt-2 w-40 rounded-2xl shadow-lg bg-blue-50 ring-2 ring-black ring-opacity-5">
                 <div
                   className="py-0"
                   role="menu"
@@ -65,7 +65,7 @@ const Navbar = () => {
                 >
                   <button
                     onClick={() => changeLanguage("ar")}
-                    className="flex flex-row items-center justify-between w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-blue-100 hover:text-gray-900"
+                    className="flex flex-row items-center justify-between w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-blue-100 hover:rounded-t-2xl hover:text-gray-900"
                     role="menuitem"
                   >
                     <img
@@ -93,7 +93,7 @@ const Navbar = () => {
                   </button>
                   <button
                     onClick={() => changeLanguage("en")}
-                    className="flex flex-row items-center justify-between w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-blue-100 hover:text-gray-900"
+                    className="flex flex-row items-center justify-between w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-blue-100 hover:rounded-b-2xl hover:text-gray-900"
                     role="menuitem"
                   >
                     <img

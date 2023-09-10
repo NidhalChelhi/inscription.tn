@@ -1,5 +1,4 @@
 "use client";
-import { useTranslation } from "react-i18next";
 import { faq } from "@/constants";
 import {
   CustomEmailButton,
@@ -7,20 +6,18 @@ import {
   CustomLegalNoticeButton,
   CustomPhoneButton,
 } from "@/components";
+import { motion } from "framer-motion";
 
 export default function Page() {
-  const { t, i18n } = useTranslation();
-
   return (
-    <div className="m-auto bg-slate-50 rounded-3xl w-5/6 h-auto flex flex-col justify-center drop-shadow-2xl text-center py-10">
-      <section
-        className="w-3/4 mx-auto flex flex-col items-center justify-center gap-8"
-        style={
-          i18n.language === "ar"
-            ? { direction: "rtl", textAlign: "right" }
-            : { direction: "ltr", textAlign: "left" }
-        }
-      >
+    <motion.div
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+      transition={{ duration: 0.5 }}
+      className="m-auto bg-slate-50 rounded-3xl w-5/6 h-auto flex flex-col justify-center drop-shadow-2xl text-left py-10"
+    >
+      <section className="w-3/4 mx-auto flex flex-col items-center justify-center gap-8">
         {/* Header */}
         <div className="flex flex-col gap-12 py-2">
           <h1 className="font-bold text-gray-800 md:text-4xl text-2xl">
@@ -30,7 +27,7 @@ export default function Page() {
             {faq.map((item, index) => (
               <div key={index} className="flex flex-col gap-2">
                 <h2 className="font-bold text-gray-800 md:text-xl text-lg">
-                  <span className="text-4xl text-gray-800 ">{`Q${
+                  <span className="md:text-4xl text-3xl text-gray-800 ">{`Q${
                     index + 1
                   }: `}</span>
                   {item.question}{" "}
@@ -51,6 +48,6 @@ export default function Page() {
           <CustomPhoneButton />
         </div>
       </section>
-    </div>
+    </motion.div>
   );
 }
