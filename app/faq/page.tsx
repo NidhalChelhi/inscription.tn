@@ -17,7 +17,7 @@ export default function Page() {
         className="w-3/4 mx-auto flex flex-col items-center justify-center gap-8"
         style={
           i18n.language === "ar"
-            ? { direction: "rtl", textAlign: "right" }
+            ? { direction: "rtl", textAlign: "left" }
             : { direction: "ltr", textAlign: "left" }
         }
       >
@@ -26,7 +26,10 @@ export default function Page() {
           <h1 className="font-bold text-gray-800 md:text-4xl text-2xl">
             FAQ - Inscription en ligne
           </h1>
-          <div className="flex flex-col gap-8">
+          <div 
+            className="flex flex-col gap-8"
+            dir="ltr"
+          >
             {faq.map((item, index) => (
               <div key={index} className="flex flex-col gap-2">
                 <h2 className="font-bold text-gray-800 md:text-xl text-lg">
