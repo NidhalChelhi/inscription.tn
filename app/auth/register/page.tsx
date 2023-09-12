@@ -161,6 +161,7 @@ export default function Page() {
               id="checkbox-1"
               type="checkbox"
               checked={isChecked}
+              className="ui-checkbox"
               onChange={() => setIsChecked(!isChecked)}
             />
           </span>
