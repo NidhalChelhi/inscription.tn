@@ -27,7 +27,7 @@ const Navbar = () => {
 
         <Link href="/" className="w-44">
           <img
-            src="/assets/logo.svg"
+            src="/logo/logo_ex.svg"
             alt="logo"
             height={24}
             className="object-contain"

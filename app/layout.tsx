@@ -14,10 +14,10 @@ export default function RootLayout({
 }) {
   return (
     <html>
-           <head>
-          <link rel="manifest" href="/manifest.json" />
-          <link rel="apple-touch-icon" href="/icons/logo-96x96.png" />
-        </head>
+      <head>
+        <link rel="manifest" href="/manifest.json" />
+        <link rel="apple-touch-icon" href="/icons/logo-96x96.png" />
+      </head>
       <title>Inscription.tn</title>
       <body className="h-screen bg-blue-50">
         <Navbar />
