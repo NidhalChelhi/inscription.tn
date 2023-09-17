@@ -9,6 +9,9 @@ Welcome to the **inscription.tn** project repository! This dynamic platform is d
 
 Check out the live demo of the project [here](https://inscription-tn.vercel.app).
 
+![Logo](https://github.com/NidhalChelhi/inscription.tn/blob/main/public/showcase/inscription_showcase.png)
+
+
 ## Technologies Used
 
 This project is built using a stack of cutting-edge technologies, including:
