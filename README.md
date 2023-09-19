@@ -1,4 +1,4 @@
-<img src="https://github.com/NidhalChelhi/inscription.tn/blob/main/public/logo/logo_ex.svg" alt="Logo" height="100px">
+<img src="https://github.com/NidhalChelhi/inscription.tn/blob/main/public/icons/icon-svg.svg" alt="Logo" height="100px">
 
 
 # Inscription.tn
@@ -9,7 +9,7 @@ Welcome to the **inscription.tn** project repository! This dynamic platform is d
 Check out the live demo of the project [here](https://inscription-tn.vercel.app).
 
 
-![Logo](https://github.com/NidhalChelhi/inscription.tn/blob/main/public/showcase/Inscriptiontn_showcase.png)
+![Showcase](https://github.com/NidhalChelhi/inscription.tn/blob/main/public/showcase/Inscriptiontn_showcase.png)
 
 
 ## Technologies Used
