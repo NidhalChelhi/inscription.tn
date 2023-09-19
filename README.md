@@ -1,4 +1,4 @@
-![Logo](https://github.com/NidhalChelhi/inscription.tn/blob/main/public/logo/logo_ex.svg)
+<img src="https://github.com/NidhalChelhi/inscription.tn/blob/main/public/logo/logo_ex.svg" alt="Logo" height="100px">
 
 
 # Inscription.tn
