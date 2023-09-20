@@ -90,7 +90,7 @@ export default function Home() {
           &copy; Made by:{" "}
           <Link
             className="text-rose-600 font-semibold truncate"
-            href="https://nidhalchelhi.vercel.app"
+            href="https://www.nidhalchelhi.me"
             target="_blank"
           >
             Nidhal Chelhi
